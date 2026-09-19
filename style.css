@@ -134,3 +134,41 @@ body {
     background-color: rgba(255, 255, 255, 0.09);
 }
 
+/* Wadah Utama Kapsul Ganda */
+.tab-pills-container {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 50px;
+    padding: 4px;
+    margin-top: 14px;
+    gap: 4px;
+}
+
+/* Tombol Individual di dalam Wadah */
+.tab-pill {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #888888;
+    padding: 10px 0;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.25s ease;
+}
+
+/* Status Aktif (Menyala Oranye Penuh) */
+.tab-pill.active {
+    background-color: #ff6600;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(255, 102, 0, 0.3);
+}
+
+/* Efek saat hover tombol tidak aktif */
+.tab-pill:not(.active):hover {
+    color: #ffffff;
+}
+
