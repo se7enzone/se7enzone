@@ -5,25 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SE7ENZONE</title>
     <link rel="stylesheet" href="style.css">
-    <!-- FontAwesome hanya untuk ikon lonceng -->
+    <!-- FontAwesome untuk ikon lonceng dan search -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Header Sticky -->
-    <header class="header">
-        <!-- Ikon Garis Tiga Kustom (Panjang Berbeda seperti Referensi) -->
-        <button class="custom-menu-btn" aria-label="Menu">
-            <span class="line line-1"></span>
-            <span class="line line-2"></span>
-            <span class="line line-3"></span>
-        </button>
+    <!-- Header Card Mengambang (Floating Header Card) -->
+    <header class="header-container">
+        <div class="header-top">
+            <!-- Tombol Garis Tiga Kustom -->
+            <button class="custom-menu-btn" aria-label="Menu">
+                <span class="line line-1"></span>
+                <span class="line line-2"></span>
+                <span class="line line-3"></span>
+            </button>
 
-        <button class="nav-icon-btn" aria-label="Notifikasi">
-            <i class="fa-solid fa-bell"></i>
-        </button>
-    </header>
+            <!-- Judul / Logo Tengah -->
+            <h1 class="header-logo">SE7ENZONE</h1>
+
+            <!-- Tombol Lonceng Notifikasi -->
+            <button class="nav-icon-btn" aria-label="Notifikasi">
+                <i class="fa-solid fa-bell"></i>
+            </button>
+        </div>
+
+        <!-- Kolom Search di dalam Card -->
+        <div class="search-box-wrapper">
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+            <input type="text" class="search-input" placeholder="Cari game atau produk...">
+        </div>
+
+        <!-- Tombol Tab Kapsul Ganda (Pilihan Produk & Cara Order) -->
+       <div class="tab-pills-container">
+        <button class="tab-pill active">All Produk</button>
+        <button class="tab-pill">Cara Order</button>
+    </div>
+</header>
 
     <script src="script.js"></script>
 </body>
 </html>
+
