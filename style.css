@@ -6,23 +6,43 @@
 
 body {
     background-color: #121212;
-    min-height: 150vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    min-height: 250vh; /* Sengaja dibuat panjang agar bisa di-scroll jauh untuk pengujian */
+    padding: 12px; /* Memberikan celah/jarak di sekeliling tepi layar HP */
 }
 
-/* Header Sticky dengan Border Tipis di Bawah */
-.header {
-    background-color: #121212;
+/* Header Card Mengambang dengan Celah di Samping & Atas */
+.header-container {
+    background-color: #1a1a1a; /* Warna abu-abu gelap solid/padat (menutup konten di belakangnya) */
+    border: 1px solid #2a2a2a;
+    border-radius: 20px;
+    padding: 16px;
+    
+    /* Tetap menempel di atas dengan celah jarak dari tepi atas layar */
+    position: sticky;
+    top: 12px;
+    z-index: 1000;
+    
+    /* Bayangan tegas agar efek melayangnya terasa nyata */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+/* Bagian Atas Card (Menu, Logo, Notifikasi) */
+.header-top {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 17px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #222222;
+    margin-bottom: 14px;
 }
 
-/* Tombol Menu Garis Tiga (Kustom Tipis & Jarak Pas) */
+.header-logo {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Tombol Menu Garis Tiga Kustom */
 .custom-menu-btn {
     background: transparent;
     border: none;
@@ -30,34 +50,32 @@ body {
     padding: 4px 2px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Jarak antar garis otomatis lebih renggang */
+    justify-content: space-between;
     width: 26px;
-    height: 22px; /* Tinggi kontainer disesuaikan agar tidak mepet */
-    transform: scale(1.1); /* <-- Tambahkan baris ini untuk memperbesar ukuran ikon secara keseluruhan */
-    transform-origin: left center; /* Menjaga posisi ikon tetap rapi di sebelah kiri */
+    height: 22px;
+    transform: scale(1.15); /* Memperbesar ikon garis tiga saja */
+    transform-origin: left center;
 }
 
-/* Ketebalan garis dibuat tipis dan elegan */
 .custom-menu-btn .line {
     display: block;
-    height: 2.1px; 
+    height: 2px; 
     background-color: #ffffff;
     border-radius: 2px;
     transition: background-color 0.2s;
 }
 
-/* Garis 1 & 2 panjangnya sama penuh */
 .custom-menu-btn .line-1,
 .custom-menu-btn .line-2 {
-    width: 23px; 
+    width: 24px; 
 }
 
-/* Garis 3 lebih pendek (setengahnya) */
 .custom-menu-btn .line-3 {
     width: 12px; 
 }
 
-.custom-menu-btn:hover .line {
+.custom-menu-btn:hover .line,
+.custom-menu-btn:active .line {
     background-color: #ff6600;
 }
 
@@ -66,16 +84,53 @@ body {
     background: transparent;
     border: none;
     color: #ffffff;
-    font-size: 18.5px;
+    font-size: 18px;
     cursor: pointer;
-    padding: 8px;
+    padding: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: color 0.2s;
 }
 
-.nav-icon-btn:hover {
+.nav-icon-btn:hover,
+.nav-icon-btn:active {
     color: #ff6600;
+}
+
+/* Kolom Search */
+.search-box-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 14px;
+    color: #888888;
+    font-size: 14px;
+}
+
+.search-input {
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 12px 14px 12px 40px;
+    color: #ffffff;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.search-input::placeholder {
+    color: #777777;
+}
+
+.search-input:focus {
+    border-color: #ff6600;
+    background-color: rgba(255, 255, 255, 0.09);
 }
 
