@@ -9,56 +9,48 @@ body {
     min-height: 150vh;
 }
 
-/* Header Sticky dengan Border Tipis di Bawah */
-.header {
-    background-color: #121212;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    border-bottom: 1px solid #222222;
-}
+/* Header Sticky Ramping */
+        .navbar {
+            background: #0d1117;
+            border-bottom: 1px solid #30363d;
+            padding: 6px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
 
-/* Styling Tombol Menu Garis Tiga Kustom */
-.custom-menu-btn {
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Tombol Ikon */
+.icon-btn {
     background: transparent;
     border: none;
+    color: #f3f4f6;
     cursor: pointer;
-    padding: 8px 4px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 22px;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+    /* Tambahan baru untuk mematikan efek biru bawaan HP */
+    -webkit-tap-highlight-color: transparent !important;
+    outline: none !important;
 }
 
-/* Mengatur ketebalan dan warna garis */
-.custom-menu-btn .line {
-    display: block;
-    height: 2.5px;
-    background-color: #ffffff;
-    border-radius: 2px;
-    transition: background-color 0.2s;
+.icon-btn:active {
+    background-color: rgba(255, 255, 255, 0.1); /* Efek abu-abu transparan saat ditekan */
+    outline: none !important;
 }
 
-/* Membuat panjang garis berbeda-beda persis seperti referensi */
-.custom-menu-btn .line-1 {
-    width: 16px; /* Garis atas lebih pendek */
-}
-
-.custom-menu-btn .line-2 {
-    width: 24px; /* Garis tengah paling panjang */
-}
-
-.custom-menu-btn .line-3 {
-    width: 20px; /* Garis bawah sedang */
-}
-
-.custom-menu-btn:hover .line {
-    background-color: #ff6600;
+.icon-btn:focus {
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 /* Ikon Lonceng di Kanan */
