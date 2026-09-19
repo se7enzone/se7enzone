@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 20px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -33,7 +33,7 @@ body {
     justify-content: space-between; /* Jarak antar garis otomatis lebih renggang */
     width: 26px;
     height: 22px; /* Tinggi kontainer disesuaikan agar tidak mepet */
-    transform: scale(1.15); /* <-- Tambahkan baris ini untuk memperbesar ukuran ikon secara keseluruhan */
+    transform: scale(1); /* <-- Tambahkan baris ini untuk memperbesar ukuran ikon secara keseluruhan */
     transform-origin: left center; /* Menjaga posisi ikon tetap rapi di sebelah kiri */
 }
 
