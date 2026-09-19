@@ -6,10 +6,10 @@
 
 body {
     background-color: #121212;
-    min-height: 150vh; 
+    min-height: 150vh;
 }
 
-/* Header Sticky Style */
+/* Header Sticky dengan Border Pembatas Tipis di Bawah */
 .header {
     background-color: #121212;
     display: flex;
@@ -19,21 +19,29 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: 1px solid #222222; /* Border tipis pembatas header & background */
 }
 
 .nav-icon-btn {
-    background: none;
+    background: transparent;
     border: none;
     color: #ffffff;
     font-size: 20px;
     cursor: pointer;
-    padding: 5px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color 0.2s;
 }
 
 .nav-icon-btn:hover {
     color: #ff6600;
+}
+
+/* Kustomisasi Ikon Garis Tiga agar tebal dan pendek seperti referensi */
+.fa-bars {
+    font-size: 18px;
+    font-weight: 900;
 }
 
