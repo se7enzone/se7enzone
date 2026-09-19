@@ -2,7 +2,7 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>SE7ENZONE</title>
     <link rel="stylesheet" href="style.css">
     <!-- FontAwesome hanya untuk ikon lonceng -->
@@ -12,16 +12,28 @@
 
     <!-- Header Sticky -->
     <header class="header">
-        <!-- Ikon Garis Tiga Kustom (Panjang Berbeda seperti Referensi) -->
+        <div style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+        <!-- Ikon Garis Tiga Kustom -->
         <button class="custom-menu-btn" aria-label="Menu">
             <span class="line line-1"></span>
             <span class="line line-2"></span>
             <span class="line line-3"></span>
         </button>
-
+        
+        <!-- Judul Logo (opsional jika ingin ditaruh tengah, atau biarkan sesuai kode lama min) -->
+            <span style="font-weight: 700; font-size: 16px;">SE7ENZONE</span>
+        
+        <!-- Ikon Lonceng Notifikasi Kustom -->
         <button class="nav-icon-btn" aria-label="Notifikasi">
             <i class="fa-solid fa-bell"></i>
         </button>
+    </div>
+
+        <!-- Ikon Kolom Search Kustom -->
+        <div class="search-container" style="margin-top: 12px; width: 100%; position: relative;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: #777777; font-size: 14px;"></i>
+            <input type="text" placeholder="Cari game atau produk..." style="width: 100%; background-color: rgba(255, 255, 255, 0.06); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 10px 14px 10px 40px; color: #ffffff; font-size: 14px; outline: none;">
+        </div>
     </header>
 
     <script src="script.js"></script>
