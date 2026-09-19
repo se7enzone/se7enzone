@@ -22,20 +22,20 @@ body {
     border-bottom: 1px solid #222222;
 }
 
-/* Styling Tombol Menu Garis Tiga Kustom */
+/* Perbaikan Tombol Menu Garis Tiga Kustom */
 .custom-menu-btn {
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 8px 4px;
+    padding: 6px 2px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    width: 28px;
-    height: 22px;
+    justify-content: space-around; /* Mengatur jarak antar garis agar tidak menumpuk */
+    width: 30px;
+    height: 24px;
 }
 
-/* Mengatur ketebalan dan warna garis */
+/* Mengatur ketebalan dan tampilan garis */
 .custom-menu-btn .line {
     display: block;
     height: 2.5px;
@@ -44,17 +44,17 @@ body {
     transition: background-color 0.2s;
 }
 
-/* Membuat panjang garis berbeda-beda persis seperti referensi */
+/* Panjang garis berbeda-beda seperti referensi */
 .custom-menu-btn .line-1 {
-    width: 16px; /* Garis atas lebih pendek */
+    width: 14px; 
 }
 
 .custom-menu-btn .line-2 {
-    width: 24px; /* Garis tengah paling panjang */
+    width: 24px; 
 }
 
 .custom-menu-btn .line-3 {
-    width: 20px; /* Garis bawah sedang */
+    width: 19px; 
 }
 
 .custom-menu-btn:hover .line {
@@ -78,3 +78,4 @@ body {
 .nav-icon-btn:hover {
     color: #ff6600;
 }
+
