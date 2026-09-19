@@ -15,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 8px 18px;
+    padding: 8px 17px;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -33,7 +33,7 @@ body {
     justify-content: space-between; /* Jarak antar garis otomatis lebih renggang */
     width: 26px;
     height: 22px; /* Tinggi kontainer disesuaikan agar tidak mepet */
-    transform: scale(1); /* <-- Tambahkan baris ini untuk memperbesar ukuran ikon secara keseluruhan */
+    transform: scale(1.1); /* <-- Tambahkan baris ini untuk memperbesar ukuran ikon secara keseluruhan */
     transform-origin: left center; /* Menjaga posisi ikon tetap rapi di sebelah kiri */
 }
 
@@ -49,7 +49,7 @@ body {
 /* Garis 1 & 2 panjangnya sama penuh */
 .custom-menu-btn .line-1,
 .custom-menu-btn .line-2 {
-    width: 24px; 
+    width: 23px; 
 }
 
 /* Garis 3 lebih pendek (setengahnya) */
