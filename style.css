@@ -33,6 +33,8 @@ body {
     justify-content: space-between; /* Jarak antar garis otomatis lebih renggang */
     width: 26px;
     height: 22px; /* Tinggi kontainer disesuaikan agar tidak mepet */
+    transform: scale(1.15); /* <-- Tambahkan baris ini untuk memperbesar ukuran ikon secara keseluruhan */
+    transform-origin: left center; /* Menjaga posisi ikon tetap rapi di sebelah kiri */
 }
 
 /* Ketebalan garis dibuat tipis dan elegan */
