@@ -6,43 +6,23 @@
 
 body {
     background-color: #121212;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    min-height: 250vh; /* Sengaja dibuat panjang agar bisa di-scroll jauh untuk pengujian */
-    padding: 12px; /* Memberikan celah/jarak di sekeliling tepi layar HP */
+    min-height: 150vh;
 }
 
-/* Header Card Mengambang dengan Celah di Samping & Atas */
-.header-container {
-    background-color: #1a1a1a; /* Warna abu-abu gelap solid/padat (menutup konten di belakangnya) */
-    border: 1px solid #2a2a2a;
-    border-radius: 20px;
-    padding: 16px;
-    
-    /* Tetap menempel di atas dengan celah jarak dari tepi atas layar */
-    position: sticky;
-    top: 12px;
-    z-index: 1000;
-    
-    /* Bayangan tegas agar efek melayangnya terasa nyata */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
-}
-
-/* Bagian Atas Card (Menu, Logo, Notifikasi) */
-.header-top {
+/* Header Sticky dengan Border Tipis di Bawah */
+.header {
+    background-color: #121212;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 14px;
+    padding: 8px 17px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #222222;
 }
 
-.header-logo {
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1px;
-}
-
-/* Tombol Menu Garis Tiga Kustom */
+/* Tombol Menu Garis Tiga (Kustom Tipis & Jarak Pas) */
 .custom-menu-btn {
     background: transparent;
     border: none;
@@ -50,32 +30,34 @@ body {
     padding: 4px 2px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between; /* Jarak antar garis otomatis lebih renggang */
     width: 26px;
-    height: 22px;
-    transform: scale(1.15); /* Memperbesar ikon garis tiga saja */
-    transform-origin: left center;
+    height: 22px; /* Tinggi kontainer disesuaikan agar tidak mepet */
+    transform: scale(1.1); /* <-- Tambahkan baris ini untuk memperbesar ukuran ikon secara keseluruhan */
+    transform-origin: left center; /* Menjaga posisi ikon tetap rapi di sebelah kiri */
 }
 
+/* Ketebalan garis dibuat tipis dan elegan */
 .custom-menu-btn .line {
     display: block;
-    height: 2px; 
+    height: 2.1px; 
     background-color: #ffffff;
     border-radius: 2px;
     transition: background-color 0.2s;
 }
 
+/* Garis 1 & 2 panjangnya sama penuh */
 .custom-menu-btn .line-1,
 .custom-menu-btn .line-2 {
-    width: 24px; 
+    width: 23px; 
 }
 
+/* Garis 3 lebih pendek (setengahnya) */
 .custom-menu-btn .line-3 {
     width: 12px; 
 }
 
-.custom-menu-btn:hover .line,
-.custom-menu-btn:active .line {
+.custom-menu-btn:hover .line {
     background-color: #ff6600;
 }
 
@@ -84,114 +66,15 @@ body {
     background: transparent;
     border: none;
     color: #ffffff;
-    font-size: 18px;
+    font-size: 18.5px;
     cursor: pointer;
-    padding: 4px;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: color 0.2s;
 }
 
-.nav-icon-btn:hover,
-.nav-icon-btn:active {
+.nav-icon-btn:hover {
     color: #ff6600;
 }
-
-/* Kolom Search */
-.search-box-wrapper {
-    position: relative;
-    width: 100%;
-    display: flex;
-    align-items: center;
-}
-
-.search-icon {
-    position: absolute;
-    left: 14px;
-    color: #888888;
-    font-size: 14px;
-}
-
-.search-input {
-    width: 100%;
-    background-color: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    padding: 12px 14px 12px 40px;
-    color: #ffffff;
-    font-size: 14px;
-    outline: none;
-    transition: all 0.2s;
-}
-
-.search-input::placeholder {
-    color: #777777;
-}
-
-.search-input:focus {
-    border-color: #ff6600;
-    background-color: rgba(255, 255, 255, 0.09);
-}
-
-/* Card Header Utama yang Sticky */
-.header-container {
-    position: sticky;
-    top: 12px;
-    z-index: 1000;
-    background-color: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 20px;
-    padding: 16px;
-    margin: 0 16px;
-    box-shadow: none;
-}
-
-/* Wrapper Kapsul di luar card utama, nempel sticky persis di bawah header */
-.tab-pills-wrapper {
-    position: sticky;
-    top: 115px; /* Jarak pas di bawah card header */
-    z-index: 999;
-    padding: 0 16px;
-    margin-top: 12px;
-    background-color: transparent;
-}
-
-/* Wadah Kapsul Asli (Tanpa bayangan) */
-.tab-pills-container {
-    display: flex;
-    background-color: #1a1a1a;
-    border: 1px solid #2a2a2a;
-    border-radius: 50px;
-    padding: 4px;
-    gap: 4px;
-    box-shadow: none;
-}
-
-/* Tombol Individual */
-.tab-pill {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: #888888;
-    padding: 10px 0;
-    border-radius: 50px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    text-align: center;
-    transition: all 0.25s ease;
-    box-shadow: none;
-}
-
-/* Status Aktif Tombol (Oranye On/Off) */
-.tab-pill.active {
-    background-color: #ff6600;
-    color: #ffffff;
-    box-shadow: none;
-}
-
-.tab-pill:not(.active):hover {
-    color: #ffffff;
-}
-
