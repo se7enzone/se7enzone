@@ -203,11 +203,35 @@ body {
     opacity: 0.7;
 }
 
-/* Container Kotak Timer */
+/* Container Kotak Timer Presisi & Anti-Goyang */
+.flash-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 6px;
+}
+
+.flash-action-btn {
+    background-color: #ffffff;
+    color: #121212;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.flash-action-btn:active {
+    opacity: 0.7;
+}
+
+/* Baris Timer */
 .flash-timer-container {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 3px;
 }
 
 .timer-box-wrap {
@@ -217,31 +241,35 @@ body {
 }
 
 .timer-box {
-    background-color: rgba(255, 152, 0, 0.12);
-    border: 1px solid rgba(255, 152, 0, 0.35);
+    background-color: rgba(255, 255, 255, 0.03); /* Transparan bersih */
+    border: 1px solid rgba(255, 255, 255, 0.15); /* Border tipis biasa, bukan light/glow */
     color: #ff9800;
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
-    padding: 4px 6px;
-    border-radius: 6px;
-    letter-spacing: 0.5px;
-    min-width: 24px;
+    padding: 3px 0;
+    border-radius: 4px;
+    width: 24px; /* Lebar dikunci mati agar tidak goyang */
     text-align: center;
+    font-variant-numeric: tabular-nums; /* Menjaga lebar angka konsisten */
 }
 
 .timer-colon {
     color: #ff9800;
     font-family: 'Orbitron', sans-serif;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
-    padding-bottom: 12px; /* Menyelaraskan titik dua agar pas di tengah secara vertikal dengan kotak angka */
+    padding-bottom: 10px; /* Menyelaraskan titik dua di tengah vertikal */
+    text-align: center;
+    width: 6px;
 }
 
 .timer-label {
-    font-size: 7.5px;
+    font-size: 7px;
     color: #888888;
     font-family: 'Orbitron', sans-serif;
-    margin-top: 3px;
+    margin-top: 2px;
     letter-spacing: 0.5px;
+    text-align: center;
 }
+
