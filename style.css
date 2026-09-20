@@ -119,11 +119,12 @@ body {
     background-color: #121212;
 }
 
+/* Banner Flash Sale Diperluas & Lebih Longgar */
 .flash-sale-banner {
     background: linear-gradient(135deg, #1e1e1e 0%, #2a1b0d 100%);
     border: 1px solid #333333;
     border-radius: 12px;
-    padding: 16px;
+    padding: 20px 16px; /* Padding atas-bawah ditambah agar banner sedikit lebih tinggi ke bawah */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -160,15 +161,16 @@ body {
     font-size: 11px;
     color: #aaaaaa;
     display: block;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Font modern bersih */
 }
 
 .flash-sale-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; /* Font modern untuk judul */
     font-size: 16px;
     font-weight: 800;
     color: #ffffff;
     letter-spacing: 0.5px;
-    margin: 2px 0;
+    margin: 3px 0;
 }
 
 .flash-sale-subtitle {
@@ -177,47 +179,24 @@ body {
     margin: 0;
     max-width: 150px;
     line-height: 1.3;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
-/* Sisi Kanan */
+/* Sisi Kanan: Jarak Lebih Rapi & Longgar */
 .flash-right {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 10px;
+    gap: 12px; /* Jarak antara tombol dan timer diperlebar agar tidak sesak */
 }
 
 .flash-action-btn {
     background-color: #ffffff;
     color: #121212;
-    font-family: 'Orbitron', sans-serif;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 6px 12px;
-    border-radius: 20px;
-    text-decoration: none;
-    transition: opacity 0.2s;
-}
-
-.flash-action-btn:active {
-    opacity: 0.7;
-}
-
-/* Container Kotak Timer Presisi & Anti-Goyang */
-.flash-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 6px;
-}
-
-.flash-action-btn {
-    background-color: #ffffff;
-    color: #121212;
-    font-family: 'Orbitron', sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 10px;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 5px 12px;
     border-radius: 20px;
     text-decoration: none;
     transition: opacity 0.2s;
@@ -227,11 +206,11 @@ body {
     opacity: 0.7;
 }
 
-/* Baris Timer */
+/* Container Kotak Timer */
 .flash-timer-container {
     display: flex;
     align-items: center;
-    gap: 3px;
+    gap: 4px;
 }
 
 .timer-box-wrap {
@@ -240,18 +219,19 @@ body {
     align-items: center;
 }
 
+/* Khusus Angka Timer Tetap Menggunakan Font Orbitron */
 .timer-box {
-    background-color: rgba(255, 255, 255, 0.03); /* Transparan bersih */
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Border tipis biasa, bukan light/glow */
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: #ff9800;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Orbitron', sans-serif; 
     font-size: 11px;
     font-weight: 700;
     padding: 3px 0;
     border-radius: 4px;
-    width: 24px; /* Lebar dikunci mati agar tidak goyang */
+    width: 24px;
     text-align: center;
-    font-variant-numeric: tabular-nums; /* Menjaga lebar angka konsisten */
+    font-variant-numeric: tabular-nums;
 }
 
 .timer-colon {
@@ -259,7 +239,7 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-size: 11px;
     font-weight: 700;
-    padding-bottom: 10px; /* Menyelaraskan titik dua di tengah vertikal */
+    padding-bottom: 12px; /* Jarak vertikal titik dua agar presisi di tengah kotak */
     text-align: center;
     width: 6px;
 }
@@ -268,8 +248,7 @@ body {
     font-size: 7px;
     color: #888888;
     font-family: 'Orbitron', sans-serif;
-    margin-top: 2px;
+    margin-top: 4px; /* Memberi jarak pas antara kotak angka dan teks HRS/MIN/SEC */
     letter-spacing: 0.5px;
     text-align: center;
 }
-
