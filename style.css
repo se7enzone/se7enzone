@@ -113,7 +113,7 @@ body {
     opacity: 0.6;
 }
 
-/* Gaya Banner Full Foto dengan Kotak Blur & Gradasi Super Halus */
+/* Gaya Banner Full Gambar dengan Overlay Gradient Halus (Ala PixelLab) */
 .flash-sale-section {
     padding: 12px 16px;
     background-color: #121212;
@@ -121,52 +121,41 @@ body {
 
 .flash-sale-banner {
     position: relative;
-    background-color: #1a1a1a;
+    background-image: url('gs_kof.jpg');
+    background-size: cover;
+    background-position: center;
     border: 1px solid #333333;
     border-radius: 12px;
     overflow: hidden;
+    height: 110px;
     display: flex;
     align-items: center;
-    height: 110px;
 }
 
-/* Sisi Kanan: Foto Karakter Memenuhi Seluruh Banner (Full Background) */
-.flash-right-image {
+/* Lapisan Hitam Transparan Halus (Gradient Overlay) dari Kiri ke Kanan */
+.flash-sale-banner::before {
+    content: '';
     position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 70%;
+    inset: 0;
+    background: linear-gradient(90deg, 
+        rgba(0, 0, 0, 0.85) 0%, 
+        rgba(0, 0, 0, 0.65) 35%, 
+        rgba(0, 0, 0, 0.2) 65%, 
+        transparent 100%
+    );
     z-index: 1;
 }
 
-.promo-character-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: right center;
-}
-
-/* Sisi Kiri: Area Teks dengan Kotak Hitam Blur & Gradasi Batas Sangat Halus */
+/* Area Teks di Atas Overlay */
 .flash-left-content {
     position: relative;
     z-index: 2;
     padding: 14px 16px;
-    width: 65%; /* Lebar kotak hitam dibatasi agar tidak menutupi sisi kanan */
+    width: 70%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
-    /* Gradasi dari kiri gelap, lalu memudar halus di ujung kanan kotak teks */
-    background: linear-gradient(90deg, 
-        rgba(10, 10, 10, 0.95) 0%, 
-        rgba(10, 10, 10, 0.85) 50%, 
-        rgba(10, 10, 10, 0.4) 80%, 
-        transparent 100%
-    );
 }
 
 .flash-top-text {
@@ -210,4 +199,9 @@ body {
 
 .flash-action-btn:active {
     opacity: 0.7;
+}
+
+/* Sembunyikan elemen gambar lama karena sekarang sudah pakai background-image */
+.flash-right-image {
+    display: none;
 }
