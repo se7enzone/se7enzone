@@ -113,7 +113,7 @@ body {
     opacity: 0.6;
 }
 
-/* Gaya Banner Flash Sale Minimalis Tanpa Timer & Tanpa Bayangan */
+/* Gaya Banner Full Foto dengan Kotak Blur & Gradasi Super Halus */
 .flash-sale-section {
     padding: 12px 16px;
     background-color: #121212;
@@ -127,22 +127,49 @@ body {
     overflow: hidden;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    min-height: 110px;
+    height: 110px;
 }
 
-/* Sisi Kiri: Teks dengan Gradasi Hitam Halus Memudar */
+/* Sisi Kanan: Foto Karakter Memenuhi Seluruh Banner (Full Background) */
+.flash-right-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.promo-character-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Sisi Kiri: Area Teks dengan Kotak Hitam Blur & Gradasi Batas Sangat Halus */
 .flash-left-content {
     position: relative;
     z-index: 2;
-    padding: 16px;
-    width: 60%;
-    background: linear-gradient(90deg, rgba(18, 18, 18, 0.95) 60%, rgba(18, 18, 18, 0.4) 90%, transparent 100%);
+    padding: 14px 16px;
+    width: 75%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    background: linear-gradient(90deg, 
+        rgba(10, 10, 10, 0.92) 30%, 
+        rgba(10, 10, 10, 0.75) 60%, 
+        rgba(10, 10, 10, 0.3) 85%, 
+        transparent 100%
+    );
 }
 
 .flash-top-text {
     font-size: 10px;
-    color: #aaaaaa;
+    color: #cccccc;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     display: block;
     margin-bottom: 2px;
@@ -153,14 +180,14 @@ body {
     font-weight: 800;
     color: #ffffff;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    margin: 0 0 4px 0;
+    margin: 0 0 3px 0;
     letter-spacing: 0.5px;
 }
 
 .flash-sale-subtitle {
     font-size: 9px;
-    color: #888888;
-    margin: 0 0 10px 0;
+    color: #aaaaaa;
+    margin: 0 0 8px 0;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.2;
 }
@@ -176,26 +203,9 @@ body {
     border-radius: 20px;
     text-decoration: none;
     transition: opacity 0.2s;
+    width: fit-content;
 }
 
 .flash-action-btn:active {
     opacity: 0.7;
 }
-
-/* Sisi Kanan: Area Gambar Karakter */
-.flash-right-image {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 50%;
-    z-index: 1;
-}
-
-.promo-character-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-}
-
