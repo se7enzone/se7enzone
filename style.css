@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
 }
 
 body {
@@ -34,6 +35,9 @@ body {
     height: 22px; /* Tinggi kontainer disesuaikan agar tidak mepet */
     transform: scale(1.1); /* <-- Tambahkan baris ini untuk memperbesar ukuran ikon secara keseluruhan */
     transform-origin: left center; /* Menjaga posisi ikon tetap rapi di sebelah kiri */
+}
+.custom-menu-btn:active {
+    opacity: 0.6;
 }
 
 /* Ketebalan garis dibuat tipis dan elegan */
@@ -73,6 +77,10 @@ body {
     align-items: center;
     justify-content: center;
     transition: color 0.2s;
+}
+.nav-icon-btn:active {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
 }
 
 .nav-icon-btn:hover {
