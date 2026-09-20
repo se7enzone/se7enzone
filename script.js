@@ -1,49 +1,52 @@
-// Hitung Mundur (Countdown Timer) Flash Sale dengan Anti-Reset (localStorage)
-function startFlashSaleTimer() {
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
+// Script Flash Sale Timer Anti-Reset dengan localStorage
+document.addEventListener("DOMContentLoaded", function () {
+    const hoursElem = document.getElementById("hours");
+    const minutesElem = document.getElementById("minutes");
+    const secondsElem = document.getElementById("seconds");
 
-    if (!hoursElement || !minutesElement || !secondsElement) return;
+    // Jika elemen timer tidak ditemukan di halaman, hentikan script
+    if (!hoursElem || !minutesElem || !secondsElem) return;
 
-    // Tentukan durasi flash sale (misal: 3 jam 45 menit 30 detik dalam detik)
-    const durationInSeconds = 3 * 3600 + 45 * 60 + 30;
+    // Tentukan durasi countdown (misal: 3 jam dari pertama kali dibuka)
+    const countdownDuration = 3 * 60 * 60 * 1000; // 3 jam dalam milidetik
     
-    // Cek apakah waktu target sudah pernah disimpan di localStorage browser
-    let targetTime = localStorage.getItem("se7enzone_flash_end_time");
-    
-    // Jika belum ada atau waktu sebelumnya sudah habis, buat target waktu baru dari sekarang
-    if (!targetTime || Date.now() > parseInt(targetTime)) {
-        targetTime = Date.now() + (durationInSeconds * 1000);
-        localStorage.setItem("se7enzone_flash_end_time", targetTime);
+    // Cek apakah target waktu sudah tersimpan di localStorage
+    let targetTime = localStorage.getItem("flashSaleTargetTime");
+
+    if (!targetTime) {
+        // Jika belum ada, buat waktu target baru dari sekarang dan simpan
+        targetTime = new Date().getTime() + countdownDuration;
+        localStorage.setItem("flashSaleTargetTime", targetTime);
+    } else {
+        targetTime = parseInt(targetTime, 10);
     }
 
-    const timerInterval = setInterval(() => {
-        const now = Date.now();
-        const remainingTime = parseInt(targetTime) - now;
+    function updateTimer() {
+        const now = new Date().getTime();
+        let timeLeft = targetTime - now;
 
-        if (remainingTime <= 0) {
-            // Jika waktu habis
-            hoursElement.textContent = "00";
-            minutesElement.textContent = "00";
-            secondsElement.textContent = "00";
-            clearInterval(timerInterval);
-            return;
+        // Jika waktu habis, reset ulang durasinya (opsional, agar terus berputar)
+        if (timeLeft <= 0) {
+            targetTime = new Date().getTime() + countdownDuration;
+            localStorage.setItem("flashSaleTargetTime", targetTime);
+            timeLeft = targetTime - now;
         }
 
-        // Hitung sisa jam, menit, dan detik
-        const totalSeconds = Math.floor(remainingTime / 1000);
-        const hours = Math.floor(totalSeconds / 3600);
-        const minutes = Math.floor((totalSeconds % 3600) / 60);
-        const seconds = totalSeconds % 60;
+        // Hitung jam, menit, detik
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        // Tampilkan ke elemen HTML dengan format 2 digit
-        hoursElement.textContent = String(hours).padStart(2, "0");
-        minutesElement.textContent = String(minutes).padStart(2, "0");
-        secondsElement.textContent = String(seconds).padStart(2, "0");
-    }, 1000);
-}
+        // Tampilkan ke dalam elemen HTML dengan format 2 digit (misal: 03, 09)
+        hoursElem.textContent = String(hours).padStart(2, '0');
+        minutesElem.textContent = String(minutes).padStart(2, '0');
+        secondsElem.textContent = String(seconds).padStart(2, '0');
+    }
 
-// Jalankan fungsi saat halaman dimuat
-document.addEventListener("DOMContentLoaded", startFlashSaleTimer);
+    // Jalankan pertama kali agar tidak ada jeda 1 detik
+    updateTimer();
+
+    // Jalankan setiap 1 detik
+    setInterval(updateTimer, 1000);
+});
 
