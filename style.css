@@ -133,9 +133,10 @@ body {
 /* Sisi Kanan: Foto Karakter Memenuhi Seluruh Banner (Full Background) */
 .flash-right-image {
     position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 70%;
     z-index: 1;
 }
 
@@ -143,7 +144,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: right center;
 }
 
 /* Sisi Kiri: Area Teks dengan Kotak Hitam Blur & Gradasi Batas Sangat Halus */
@@ -151,7 +152,7 @@ body {
     position: relative;
     z-index: 2;
     padding: 14px 16px;
-    width: 75%;
+    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -159,10 +160,13 @@ body {
     
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
+    /* Gradasi super panjang dan landai agar batasnya benar-benar tidak terlihat / asoy */
     background: linear-gradient(90deg, 
-        rgba(10, 10, 10, 0.92) 30%, 
-        rgba(10, 10, 10, 0.75) 60%, 
-        rgba(10, 10, 10, 0.3) 85%, 
+        rgba(10, 10, 10, 0.95) 0%, 
+        rgba(10, 10, 10, 0.90) 25%, 
+        rgba(10, 10, 10, 0.70) 45%, 
+        rgba(10, 10, 10, 0.35) 65%, 
+        rgba(10, 10, 10, 0.10) 80%, 
         transparent 100%
     );
 }
