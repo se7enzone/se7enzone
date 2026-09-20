@@ -79,8 +79,8 @@ body {
     transition: color 0.2s;
 }
 .nav-icon-btn:active {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 50%;
+    opacity: 0.6;
+    background-color: transparent; /* Pastikan background tetap transparan tanpa kotak abu-abu */
 }
 
 .nav-icon-btn:hover {
