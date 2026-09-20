@@ -152,21 +152,19 @@ body {
     position: relative;
     z-index: 2;
     padding: 14px 16px;
-    width: 100%;
+    width: 65%; /* Lebar kotak hitam dibatasi agar tidak menutupi sisi kanan */
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(4px);
-    /* Gradasi super panjang dan landai agar batasnya benar-benar tidak terlihat / asoy */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+    /* Gradasi dari kiri gelap, lalu memudar halus di ujung kanan kotak teks */
     background: linear-gradient(90deg, 
         rgba(10, 10, 10, 0.95) 0%, 
-        rgba(10, 10, 10, 0.90) 25%, 
-        rgba(10, 10, 10, 0.70) 45%, 
-        rgba(10, 10, 10, 0.35) 65%, 
-        rgba(10, 10, 10, 0.10) 80%, 
+        rgba(10, 10, 10, 0.85) 50%, 
+        rgba(10, 10, 10, 0.4) 80%, 
         transparent 100%
     );
 }
