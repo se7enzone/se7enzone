@@ -112,3 +112,57 @@ body {
 .nav-back-btn:active {
     opacity: 0.6;
 }
+
+/* Gaya Banner Flash Sale */
+.flash-sale-section {
+    padding: 12px 16px;
+    background-color: #121212;
+}
+
+.flash-sale-banner {
+    background: linear-gradient(135deg, #1e1e1e 0%, #2a1b0d 100%);
+    border: 1px solid #333333;
+    border-radius: 12px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flash-sale-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.flash-icon {
+    color: #ff9800;
+    font-size: 16px;
+}
+
+.flash-sale-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.flash-sale-subtitle {
+    font-size: 11px;
+    color: #aaaaaa;
+    margin: 2px 0 0 0;
+}
+
+.flash-timer {
+    background-color: rgba(255, 152, 0, 0.15);
+    border: 1px solid rgba(255, 152, 0, 0.3);
+    color: #ff9800;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 8px;
+    letter-spacing: 1px;
+}
