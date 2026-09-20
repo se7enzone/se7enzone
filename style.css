@@ -113,7 +113,7 @@ body {
     opacity: 0.6;
 }
 
-/* Gaya Banner Flash Sale Menyesuaikan Referensi */
+/* Gaya Banner Flash Sale & Kotak Timer Presisi */
 .flash-sale-section {
     padding: 12px 16px;
     background-color: #121212;
@@ -184,7 +184,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    gap: 8px;
+    gap: 10px;
 }
 
 .flash-action-btn {
@@ -203,26 +203,45 @@ body {
     opacity: 0.7;
 }
 
-.flash-timer-wrapper {
+/* Container Kotak Timer */
+.flash-timer-container {
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+    align-items: center;
+    gap: 4px;
 }
 
-.flash-timer {
+.timer-box-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timer-box {
+    background-color: rgba(255, 152, 0, 0.12);
+    border: 1px solid rgba(255, 152, 0, 0.35);
     color: #ff9800;
     font-family: 'Orbitron', sans-serif;
     font-size: 13px;
     font-weight: 700;
-    letter-spacing: 1px;
+    padding: 4px 6px;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    min-width: 24px;
+    text-align: center;
 }
 
-.flash-timer-labels {
-    display: flex;
-    gap: 10px;
-    font-size: 8px;
-    color: #777777;
+.timer-colon {
+    color: #ff9800;
     font-family: 'Orbitron', sans-serif;
-    margin-top: 1px;
-    padding-right: 2px;
+    font-size: 13px;
+    font-weight: 700;
+    padding-bottom: 12px; /* Menyelaraskan titik dua agar pas di tengah secara vertikal dengan kotak angka */
+}
+
+.timer-label {
+    font-size: 7.5px;
+    color: #888888;
+    font-family: 'Orbitron', sans-serif;
+    margin-top: 3px;
+    letter-spacing: 0.5px;
 }
