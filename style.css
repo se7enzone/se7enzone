@@ -92,3 +92,23 @@ body {
 .search-container input:focus {
     border-color: #ff6600 !important;
 }
+
+/* Gaya untuk tombol kembali di halaman khusus */
+.nav-back-btn {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 18.5px;
+    cursor: pointer;
+    padding: 8px;
+    margin-left: -6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, opacity 0.2s;
+    text-decoration: none;
+}
+
+.nav-back-btn:active {
+    opacity: 0.6;
+}
