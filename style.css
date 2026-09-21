@@ -262,36 +262,30 @@ body {
     animation: floatBackgroundOnly 6s ease-in-out infinite;
 }
 
-/* Efek Partikel Butiran Api Kecil Jatuh Halus */
-@keyframes fireSparkFall {
+/* Efek Asap Mengepul & Api Bergejolak Hidup secara Halus */
+@keyframes livingSmokeAndFire {
     0% {
-        transform: translateY(-20px) translateX(0px);
-        opacity: 0;
+        background-position: right 0px bottom 0px;
+        transform: translateY(0px) scale(1);
+        filter: brightness(1) contrast(1);
     }
     30% {
-        opacity: 0.9;
+        transform: translateY(-2px) scale(1.01);
+        filter: brightness(1.1) contrast(1.05);
+    }
+    60% {
+        background-position: right -2px bottom -2px;
+        transform: translateY(-1px) scale(1.005);
+        filter: brightness(1.05) contrast(1.02);
     }
     100% {
-        transform: translateY(120px) translateX(-15px); /* Jatuh ke bawah dan sedikit bergeser ke kiri secara halus */
-        opacity: 0;
+        background-position: right 0px bottom 0px;
+        transform: translateY(0px) scale(1);
+        filter: brightness(1) contrast(1);
     }
 }
 
-/* Memasang Lapisan Partikel di Area Gambar Hero (Sebelah Kanan) */
-.flash-sale-banner::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 55%; /* Area khusus di sebelah kanan (area gambar hero) */
-    height: 100%;
-    pointer-events: none; /* Aman, tidak mengganggu klik tombol */
-    background-image: 
-        radial-gradient(circle, #ffaa00 1.5px, transparent 2px),
-        radial-gradient(circle, #ff4500 1px, transparent 1.5px),
-        radial-gradient(circle, #ffee55 2px, transparent 2.5px);
-    background-size: 35px 35px, 55px 55px, 45px 45px;
-    background-position: 0 0, 15px 15px, 25px 25px;
-    animation: fireSparkFall 3.5s linear infinite;
-    z-index: 1; /* Berada di atas background tapi di bawah teks */
+/* Terapkan khusus pada background bannernya saja */
+.flash-sale-banner {
+    animation: livingSmokeAndFire 7s ease-in-out infinite;
 }
