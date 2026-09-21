@@ -243,3 +243,23 @@ body {
     background-color: rgba(60, 60, 60, 0.85);
     transform: scale(0.96);
 }
+
+/* Animasi Mengambang Super Halus & Pelan */
+@keyframes floatSuperSmooth {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-3px); /* Naik sedikit saja setinggi 3 piksel secara sangat pelan */
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Terapkan khusus pada gambar/latar banner */
+.flash-sale-bg, 
+.flash-sale-banner img {
+    animation: floatSuperSmooth 6s ease-in-out infinite; /* Durasi 6 detik bikin gerakannya jadi gemulai & tidak kaku */
+}
+
