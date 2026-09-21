@@ -244,27 +244,21 @@ body {
     transform: scale(0.96);
 }
 
-/* Animasi Mengambang Super Halus & Pelan */
-@keyframes floatSuperSmooth {
+/* 1. Animasi khusus menggeser titik fokus background secara halus */
+@keyframes floatBackgroundOnly {
     0% {
-        transform: translateY(0px);
+        background-position: right 0px;
     }
     50% {
-        transform: translateY(-3px); /* Naik sedikit saja setinggi 3 piksel secara sangat pelan */
+        background-position: right -3px; /* Menggeser posisi background gambar ke atas sedikit secara halus */
     }
     100% {
-        transform: translateY(0px);
+        background-position: right 0px;
     }
 }
 
-/* Terapkan animasi langsung ke latar belakang/gambar hero banner min */
+/* 2. Terapkan animasi HANYA pada pergerakan background-nya */
 .flash-sale-banner {
-    position: relative;
-    overflow: hidden; /* Opsional, agar gambar tidak keluar jalur kotak */
+    animation: floatBackgroundOnly 6s ease-in-out infinite;
 }
 
-/* Targetkan ke elemen background atau gambar di dalam banner */
-.flash-sale-banner::before, 
-.flash-sale-banner img {
-    animation: floatSuperSmooth 6s ease-in-out infinite;
-}
