@@ -125,7 +125,7 @@ body {
 .flash-sale-banner {
     position: relative;
     background-image: url('gs_kof.jpg');
-    background-size: 115%; /* Ukuran banner gambar 
+    background-size: cover; 
     background-position: 82% 20%; 
     border: 1px solid #333333;
     border-radius: 14px;
