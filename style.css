@@ -186,12 +186,14 @@ body {
 }
 
 .font-lemonmilk {
-    display: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 18px;
     color: #ffffff;
     line-height: 0.9;
+    position: relative;
+    top: -5px;
+    left: 0px;
 }
 
 .font-poppins-extrabold {
