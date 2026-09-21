@@ -188,7 +188,7 @@ body {
 .font-lemonmilk {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 35px;
     color: #ffffff;
     line-height: 0.9;
     position: relative;
@@ -202,7 +202,7 @@ body {
     color: #ffffff;
     letter-spacing: 0.5px;
     position: relative;
-    top: 15px;
+    top: 25px;
 }
 
 .flash-sale-subtitle {
