@@ -169,9 +169,10 @@ body {
 /* Gaya Teks Diskon "30" */
 .font-bebas {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 52px;
+    font-size: 65px;
     color: #ffffff;
     letter-spacing: 1px;
+    margin-left: 8px;
 }
 
 /* Wadah Tumpukan % dan OFF di Kanan Angka 30 */
@@ -183,6 +184,7 @@ body {
 }
 
 .font-lemonmilk {
+    display: none;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 18px;
@@ -191,6 +193,7 @@ body {
 }
 
 .font-poppins-extrabold {
+    display: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-size: 14px;
