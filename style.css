@@ -195,12 +195,13 @@ body {
 }
 
 .font-poppins-extrabold {
-    display: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
     font-size: 14px;
     color: #ffffff;
     letter-spacing: 0.5px;
+    position: relative;
+    top: 15px;
 }
 
 .flash-sale-subtitle {
