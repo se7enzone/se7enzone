@@ -244,32 +244,32 @@ body {
     transform: scale(0.96);
 }
 
-/* 1. Animasi Background Hidup (Asap & Api Bergerak Halus Tanpa Geser Kotak) */
+/* Animasi Background Hidup: Asap & Api Bergejolak Tanpa Naik ke Atas */
 @keyframes livingBackgroundOnly {
     0% {
-        background-position: right 0px bottom -20px;
+        background-position: right 0px bottom -18px; /* Dikunci tetap di bawah */
         filter: brightness(1) contrast(1);
     }
     30% {
-        background-position: right -3px bottom -1px;
+        background-position: right -3px bottom -20px; /* Bergeser sangat halus di area bawah */
         filter: brightness(1.1) contrast(1.05);
     }
     60% {
-        background-position: right -1px bottom -3px;
+        background-position: right -1px bottom -16px;
         filter: brightness(1.05) contrast(1.02);
     }
     100% {
-        background-position: right 0px bottom 0px;
+        background-position: right 0px bottom -18px; /* Kembali ke posisi bawah yang pas */
         filter: brightness(1) contrast(1);
     }
 }
 
-/* 2. Terapkan animasi HANYA pada background banner */
+/* Terapkan animasi HANYA pada background banner */
 .flash-sale-banner {
     animation: livingBackgroundOnly 7s ease-in-out infinite;
 }
 
-/* 3. KUNCI MATI TOTAL SEMUA TEKS DAN TOMBOL DI DALAMNYA */
+/* KUNCI MATI TOTAL SEMUA TEKS DAN TOMBOL DI DALAMNYA */
 .flash-sale-group,
 .flash-sale-subtitle,
 .flash-action-btn {
@@ -278,3 +278,4 @@ body {
     position: relative;
     z-index: 2;
 }
+
