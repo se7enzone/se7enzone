@@ -113,7 +113,10 @@ body {
     opacity: 0.6;
 }
 
-/* Gaya Banner Full Gambar dengan Overlay Gradient Halus (Ala PixelLab) */
+/* ==========================================================
+   STYLING BANNER FLASH SALE PROFESIONAL ALA PIXELLAB
+   ================================================---------- */
+
 .flash-sale-section {
     padding: 12px 16px;
     background-color: #121212;
@@ -123,85 +126,114 @@ body {
     position: relative;
     background-image: url('gs_kof.jpg');
     background-size: cover;
-    background-position: center;
+    /* Posisi gambar diatur agar kepala dan tangan karakter tidak terpotong */
+    background-position: 85% center; 
     border: 1px solid #333333;
-    border-radius: 12px;
+    border-radius: 14px;
     overflow: hidden;
-    height: 110px;
+    height: 135px; /* Tinggi banner lebih lega dan proporsional */
     display: flex;
     align-items: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Lapisan Hitam Transparan Halus (Gradient Overlay) dari Kiri ke Kanan */
+/* Gradient Overlay Hitam Mulus dari Kiri ke Kanan */
 .flash-sale-banner::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(90deg, 
-        rgba(0, 0, 0, 0.85) 0%, 
-        rgba(0, 0, 0, 0.65) 35%, 
-        rgba(0, 0, 0, 0.2) 65%, 
+        rgba(0, 0, 0, 0.92) 0%, 
+        rgba(0, 0, 0, 0.78) 45%, 
+        rgba(0, 0, 0, 0.3) 80%, 
         transparent 100%
     );
     z-index: 1;
 }
 
-/* Area Teks di Atas Overlay */
+/* Area Teks di Sisi Kiri */
 .flash-left-content {
     position: relative;
     z-index: 2;
-    padding: 14px 16px;
-    width: 70%;
+    padding: 16px 18px;
+    width: 75%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.flash-top-text {
-    font-size: 10px;
-    color: #cccccc;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    display: block;
-    margin-bottom: 2px;
-}
-
+/* Pengaturan Teks Utama & Kombinasi Font Kustom */
 .flash-sale-title {
-    font-size: 16px;
-    font-weight: 800;
     color: #ffffff;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    margin: 0 0 3px 0;
-    letter-spacing: 0.5px;
+    line-height: 1;
+    margin: 0 0 4px 0;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
 }
 
+/* 1. Teks "30" -> Bebas Neue Font (Besar dan Tegas) */
+.font-bebas {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 42px;
+    letter-spacing: 1px;
+}
+
+/* 2. Teks "%" -> Montserrat Medium Font */
+.font-lemonmilk {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 26px;
+}
+
+/* 3. Teks "OFF" -> Poppins Extra Bold */
+.font-poppins-extrabold {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    margin-left: 4px;
+}
+
+/* 4. Subtitle "Special Launch Day" -> Poppins Bold Biasa (weight 600) */
 .flash-sale-subtitle {
-    font-size: 9px;
-    color: #aaaaaa;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 11px;
+    color: #dddddd;
     margin: 0 0 8px 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    line-height: 1.2;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
+/* Tombol Aksi: Abu-abu Gelap Transparan & Kontras Elegan */
 .flash-action-btn {
-    display: inline-block;
-    background-color: #e0e0e0;
-    color: #121212;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(50, 50, 50, 0.65);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
     font-size: 10px;
-    font-weight: 700;
-    padding: 5px 14px;
+    font-weight: 600;
+    padding: 5px 12px;
     border-radius: 20px;
     text-decoration: none;
-    transition: opacity 0.2s;
+    transition: all 0.2s ease;
     width: fit-content;
+    letter-spacing: 0.3px;
 }
 
 .flash-action-btn:active {
-    opacity: 0.7;
+    background-color: rgba(70, 70, 70, 0.85);
+    transform: scale(0.96);
 }
 
-/* Sembunyikan elemen gambar lama karena sekarang sudah pakai background-image */
+/* Sembunyikan elemen gambar lama karena sudah di-handle oleh background-image utama */
 .flash-right-image {
     display: none;
 }
