@@ -114,7 +114,7 @@ body {
 }
 
 /* ==========================================================
-   STYLING BANNER FLASH SALE PROFESIONAL ALA PIXELLAB
+   BANNER FLASH SALE PRESISI TINGGI ALA PIXELLAB
    ================================================---------- */
 
 .flash-sale-section {
@@ -124,116 +124,100 @@ body {
 
 .flash-sale-banner {
     position: relative;
-    background-image: url('gs_kof.jpg');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.35)), url('gs_kof.jpg');
     background-size: cover;
-    /* Posisi gambar diatur agar kepala dan tangan karakter tidak terpotong */
-    background-position: 85% center; 
+    background-position: 82% 35%; 
     border: 1px solid #333333;
     border-radius: 14px;
     overflow: hidden;
-    height: 135px; /* Tinggi banner lebih lega dan proporsional */
+    height: 145px;
     display: flex;
     align-items: center;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+    padding: 0 16px;
 }
 
-/* Gradient Overlay Hitam Mulus dari Kiri ke Kanan */
-.flash-sale-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, 
-        rgba(0, 0, 0, 0.92) 0%, 
-        rgba(0, 0, 0, 0.78) 45%, 
-        rgba(0, 0, 0, 0.3) 80%, 
-        transparent 100%
-    );
-    z-index: 1;
-}
-
-/* Area Teks di Sisi Kiri */
+/* Konten Teks di Sebelah Kiri Banner */
 .flash-left-content {
-    position: relative;
-    z-index: 2;
-    padding: 16px 18px;
-    width: 75%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    z-index: 2;
 }
 
-/* Pengaturan Teks Utama & Kombinasi Font Kustom */
-.flash-sale-title {
-    color: #ffffff;
-    line-height: 1;
-    margin: 0 0 4px 0;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+/* Grup Angka 30 dan Simbol % OFF */
+.flash-sale-group {
     display: flex;
-    align-items: baseline;
-    gap: 2px;
+    align-items: flex-start;
+    line-height: 1;
 }
 
-/* 1. Teks "30" -> Bebas Neue Font (Besar dan Tegas) */
+/* Gaya Teks Diskon "30" */
 .font-bebas {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 42px;
+    font-size: 52px;
+    color: #ffffff;
     letter-spacing: 1px;
 }
 
-/* 2. Teks "%" -> Montserrat Medium Font */
-.font-lemonmilk {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
-    font-size: 26px;
+/* Wadah Tumpukan % dan OFF di Kanan Angka 30 */
+.flash-right-stack {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3px;
+    justify-content: flex-start;
 }
 
-/* 3. Teks "OFF" -> Poppins Extra Bold */
+.font-lemonmilk {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #ffffff;
+    line-height: 0.9;
+}
+
 .font-poppins-extrabold {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: 18px;
-    margin-left: 4px;
+    font-size: 14px;
+    color: #ffffff;
+    letter-spacing: 0.5px;
 }
 
-/* 4. Subtitle "Special Launch Day" -> Poppins Bold Biasa (weight 600) */
 .flash-sale-subtitle {
     font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 11px;
-    color: #dddddd;
-    margin: 0 0 8px 0;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
+    font-size: 10.5px;
+    font-weight: 500;
+    color: #e0e0e0;
+    text-transform: lowercase;
+    margin-top: 2px;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
 }
 
-/* Tombol Aksi: Abu-abu Gelap Transparan & Kontras Elegan */
+/* Tombol Aksi: Minimalis, Kecil, dan Estetik Tanpa Panah */
 .flash-action-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    background-color: rgba(50, 50, 50, 0.65);
+    background-color: rgba(40, 40, 40, 0.65);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
-    font-size: 10px;
+    font-size: 8.5px;
     font-weight: 600;
-    padding: 5px 12px;
-    border-radius: 20px;
+    padding: 3px 9px;
+    border-radius: 15px;
     text-decoration: none;
     transition: all 0.2s ease;
     width: fit-content;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.4px;
 }
 
 .flash-action-btn:active {
-    background-color: rgba(70, 70, 70, 0.85);
+    background-color: rgba(60, 60, 60, 0.85);
     transform: scale(0.96);
 }
 
-/* Sembunyikan elemen gambar lama karena sudah di-handle oleh background-image utama */
-.flash-right-image {
-    display: none;
-}
