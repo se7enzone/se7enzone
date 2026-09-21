@@ -137,16 +137,16 @@ body {
     padding: 0 16px;
 }
 
-/* Efek Background Hitam Halus (Gradient Overlay) di belakang teks */
+/* Efek Background Hitam Halus ditarik lebih ke kiri */
 .flash-sale-banner::before {
     content: '';
     position: absolute;
     inset: 0;
     background: linear-gradient(90deg, 
-        rgba(0, 0, 0, 0.92) 0%, 
-        rgba(0, 0, 0, 0.75) 45%, 
-        rgba(0, 0, 0, 0.2) 75%, 
-        transparent 100%
+        rgba(0, 0, 0, 0.95) 0%, 
+        rgba(0, 0, 0, 0.7) 30%, 
+        rgba(0, 0, 0, 0.15) 50%, 
+        transparent 70%
     );
     z-index: 1;
 }
