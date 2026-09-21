@@ -188,7 +188,7 @@ body {
 .font-lemonmilk {
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    font-size: 36px;
+    font-size: 30px;
     color: #ffffff;
     line-height: 0.9;
     position: relative;
@@ -198,7 +198,7 @@ body {
 .font-poppins-extrabold {
     font-family: 'Poppins', sans-serif;
     font-weight: 800;
-    font-size: 15px;
+    font-size: 25px;
     color: #ffffff;
     letter-spacing: 0.5px;
     position: relative;
