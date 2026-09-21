@@ -173,7 +173,8 @@ body {
     color: #ffffff;
     letter-spacing: 1px;
     margin-left: 7.5px;
-    margin-top: 10px;
+    position: relative;
+    top: 5px;
 }
 
 /* Wadah Tumpukan % dan OFF di Kanan Angka 30 */
