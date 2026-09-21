@@ -257,9 +257,14 @@ body {
     }
 }
 
-/* Terapkan khusus pada gambar/latar banner */
-.flash-sale-bg, 
-.flash-sale-banner img {
-    animation: floatSuperSmooth 6s ease-in-out infinite; /* Durasi 6 detik bikin gerakannya jadi gemulai & tidak kaku */
+/* Terapkan animasi langsung ke latar belakang/gambar hero banner min */
+.flash-sale-banner {
+    position: relative;
+    overflow: hidden; /* Opsional, agar gambar tidak keluar jalur kotak */
 }
 
+/* Targetkan ke elemen background atau gambar di dalam banner */
+.flash-sale-banner::before, 
+.flash-sale-banner img {
+    animation: floatSuperSmooth 6s ease-in-out infinite;
+}
