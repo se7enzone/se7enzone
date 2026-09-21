@@ -247,7 +247,7 @@ body {
 /* 1. Animasi Background Hidup (Asap & Api Bergerak Halus Tanpa Geser Kotak) */
 @keyframes livingBackgroundOnly {
     0% {
-        background-position: right 0px bottom 0px;
+        background-position: right 0px bottom -20px;
         filter: brightness(1) contrast(1);
     }
     30% {
