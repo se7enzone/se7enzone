@@ -244,48 +244,37 @@ body {
     transform: scale(0.96);
 }
 
-/* 1. Animasi khusus menggeser titik fokus background secara halus */
-@keyframes floatBackgroundOnly {
-    0% {
-        background-position: right 0px;
-    }
-    50% {
-        background-position: right -3px; /* Menggeser posisi background gambar ke atas sedikit secara halus */
-    }
-    100% {
-        background-position: right 0px;
-    }
-}
-
-/* 2. Terapkan animasi HANYA pada pergerakan background-nya */
-.flash-sale-banner {
-    animation: floatBackgroundOnly 6s ease-in-out infinite;
-}
-
-/* Efek Asap Mengepul & Api Bergejolak Hidup secara Halus */
-@keyframes livingSmokeAndFire {
+/* 1. Animasi Background Hidup (Asap & Api Bergerak Halus Tanpa Geser Kotak) */
+@keyframes livingBackgroundOnly {
     0% {
         background-position: right 0px bottom 0px;
-        transform: translateY(0px) scale(1);
         filter: brightness(1) contrast(1);
     }
     30% {
-        transform: translateY(-2px) scale(1.01);
+        background-position: right -3px bottom -1px;
         filter: brightness(1.1) contrast(1.05);
     }
     60% {
-        background-position: right -2px bottom -2px;
-        transform: translateY(-1px) scale(1.005);
+        background-position: right -1px bottom -3px;
         filter: brightness(1.05) contrast(1.02);
     }
     100% {
         background-position: right 0px bottom 0px;
-        transform: translateY(0px) scale(1);
         filter: brightness(1) contrast(1);
     }
 }
 
-/* Terapkan khusus pada background bannernya saja */
+/* 2. Terapkan animasi HANYA pada background banner */
 .flash-sale-banner {
-    animation: livingSmokeAndFire 7s ease-in-out infinite;
+    animation: livingBackgroundOnly 7s ease-in-out infinite;
+}
+
+/* 3. KUNCI MATI TOTAL SEMUA TEKS DAN TOMBOL DI DALAMNYA */
+.flash-sale-group,
+.flash-sale-subtitle,
+.flash-action-btn {
+    animation: none !important;
+    transform: none !important;
+    position: relative;
+    z-index: 2;
 }
