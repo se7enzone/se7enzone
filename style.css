@@ -345,7 +345,7 @@ body {
 
 /* Wadah card tunggal di sisi kiri */
 .product-single-container {
-    padding: 0 8px;
+    padding: 0 5px;
     width: 100%;
     max-width: 230px;
     box-sizing: border-box;
@@ -380,7 +380,7 @@ body {
 
 /* Area Teks & Tombol di Bawah */
 .product-info {
-    padding: 10px 10px 13px 10px;
+    padding: 10px 10px 12px 10px;
     display: flex;
     flex-direction: column;
     gap: 4px;
