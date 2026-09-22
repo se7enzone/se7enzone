@@ -294,7 +294,7 @@ body {
     padding-left: 15px; /* Supaya sejajar rapi dengan banner */
 }
 
-/* Gaya Dasar Tombol (Mode Off & Transisi Menyeluruh) */
+/* Gaya Dasar Tombol (Mode Off & Border Dikunci Konsisten) */
 .nav-tab-btn {
     background-color: transparent;
     border: 1px solid rgba(255, 255, 255, 0.2); /* Border dasar abu-abu transparan */
@@ -305,15 +305,15 @@ body {
     padding: 6px 14px;
     border-radius: 8px;
     cursor: pointer;
-    /* Gunakan durasi transisi yang sama persis untuk semua properti */
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Transisi serentak untuk semua komponen agar bergerak bersamaan */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Gaya Tombol Saat Aktif (Warna Merah Cabai Menyala & Teks Putih) */
+/* Gaya Tombol Saat Aktif (Warna Merah Cabai Menyeluruh) */
 .nav-tab-btn.active {
     background-color: #ff3b00; /* Warna merah cabai menyala */
     color: #ffffff;            /* Teks putih bersih */
-    border: 1px solid #ff3b00; /* Border ikut berubah selaras */
+    border: 1px solid #ff3b00; /* Border tegas merah cabai */
     box-shadow: 0 3px 12px rgba(255, 59, 0, 0.4); /* Efek glow merah cabai */
 }
 
