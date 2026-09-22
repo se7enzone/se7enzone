@@ -340,19 +340,18 @@ body {
 }
 
 /* ================================================= */
-/* GRID 2 KOLOM & CARD PRODUK (RASIO FOTO 16:9)       */
+/* DESAIN 1 CARD PRODUK TUNGGAL (FOKUS TAMPILAN)      */
 /* ================================================= */
 
-/* Container Grid 2 Kolom */
-.product-grid-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    padding: 0 10px 20px 10px;
+/* Wadah sementara untuk card tunggal agar pas di tengah/kiri */
+.product-single-container {
+    padding: 0 12px;
     width: 100%;
+    max-width: 220px; /* Ukuran pas untuk card tunggal */
+    box-sizing: border-box;
 }
 
-/* Desain Card Produk */
+/* Desain Utama Card */
 .product-card {
     background-color: #1a1a1a;
     border: 1px solid rgba(255, 255, 255, 0.08);
@@ -360,17 +359,14 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    position: relative;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Pembungkus Gambar dengan Celah */
+/* Pembungkus Gambar dengan Celah di Atas, Kiri, Kanan */
 .product-img-wrapper {
     position: relative;
     width: 100%;
     aspect-ratio: 16 / 9;
-    background-color: transparent;
-    overflow: hidden;
     padding: 8px 8px 0 8px;
     box-sizing: border-box;
 }
@@ -382,26 +378,26 @@ body {
     border-radius: 10px;
 }
 
-/* Area Konten Teks */
+/* Area Teks & Tombol di Bawah */
 .product-info {
-    padding: 8px 10px 10px 10px;
+    padding: 10px 12px 14px 12px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
 }
 
-/* Judul Produk: Font standar sistem & tidak tebal */
+/* Judul Produk (Font Standar Sistem & Tidak Tebal) */
 .product-title {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 11.5px;
-    font-weight: 400; 
+    font-weight: 400;
     color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* Harga Coret & Harga Normal */
+/* Harga Coret & Harga Diskon */
 .product-price-wrapper {
     display: flex;
     align-items: center;
@@ -422,7 +418,7 @@ body {
     color: #ff3b00;
 }
 
-/* Baris Bawah: Stok dan Tombol View Detail */
+/* Baris Stok & Tombol Detail */
 .product-bottom-row {
     display: flex;
     align-items: center;
@@ -436,7 +432,6 @@ body {
     color: #aaaaaa;
 }
 
-/* Tombol View Detail Mungil */
 .product-detail-btn {
     background-color: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -446,9 +441,4 @@ body {
     padding: 4px 8px;
     border-radius: 6px;
     cursor: pointer;
-}
-
-.product-detail-btn:active {
-    background-color: #ff3b00;
-    border-color: #ff3b00;
 }
