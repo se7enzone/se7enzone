@@ -380,7 +380,7 @@ body {
 
 /* Area Teks & Tombol di Bawah */
 .product-info {
-    padding: 10px 10px 7px 10px;
+    padding: 10px 10px 6px 10px;
     display: flex;
     flex-direction: column;
     gap: 4px;
