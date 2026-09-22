@@ -294,27 +294,30 @@ body {
     padding-left: 15px; /* Supaya sejajar rapi dengan banner */
 }
 
-/* Gaya Dasar Tombol (Mode Off & Border Dikunci Konsisten) */
+/* Gaya Dasar Tombol (Mode Off - Bersih Seketika Tanpa Sisa Bayangan) */
 .nav-tab-btn {
     background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Border dasar abu-abu transparan */
-    color: #999999;                             /* Teks abu-abu lembut saat off */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #999999;
     font-family: 'Poppins', sans-serif;
     font-size: 11px;
     font-weight: 600;
     padding: 6px 14px;
     border-radius: 8px;
     cursor: pointer;
-    /* Transisi serentak untuk semua komponen agar bergerak bersamaan */
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+    /* Kita matikan transisi warna/background saat off agar langsung bersih seketika */
+    transition: none; 
 }
 
-/* Gaya Tombol Saat Aktif (Warna Merah Cabai Menyeluruh) */
+/* Gaya Tombol Saat Aktif (Warna Merah Cabai Menyala) */
 .nav-tab-btn.active {
-    background-color: #ff3b00; /* Warna merah cabai menyala */
+    background-color: #ff3b00; /* Merah cabai pekat */
     color: #ffffff;            /* Teks putih bersih */
-    border: 1px solid #ff3b00; /* Border tegas merah cabai */
-    box-shadow: 0 3px 12px rgba(255, 59, 0, 0.4); /* Efek glow merah cabai */
+    border: 1px solid #ff3b00; /* Border merah cabai tegas */
+    box-shadow: 0 3px 12px rgba(255, 59, 0, 0.4); /* Efek glow */
+    /* Berikan sedikit transisi halus HANYA saat tombolnya di-klik aktif */
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 /* Pengaturan Konten Tab (Sembunyikan yang tidak aktif) */
