@@ -39,6 +39,11 @@ body {
 .custom-menu-btn:active {
     opacity: 0.6;
 }
+.custom-menu-btn:active .line-1,
+.custom-menu-btn:active .line-2,
+.custom-menu-btn:active .line-3 {
+    background-color: #ff3b00 !important;
+}
 
 /* Ketebalan garis dibuat tipis dan elegan */
 .custom-menu-btn .line {
@@ -82,6 +87,7 @@ body {
 .nav-icon-btn:active {
     opacity: 0.6;
     background-color: transparent; /* Pastikan background tetap transparan tanpa kotak abu-abu */
+    color: #ff3b00 !important;
 }
 
 .nav-icon-btn:hover {
