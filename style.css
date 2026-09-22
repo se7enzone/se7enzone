@@ -389,8 +389,8 @@ body {
 /* Judul Produk (Font Standar Sistem & Tidak Tebal) */
 .product-title {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 11.5px;
-    font-weight: 675;
+    font-size: 11px;
+    font-weight: 655;
     color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
@@ -402,7 +402,7 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-top: 5px;
+    margin-top: 4px;
 }
 
 .product-price-old {
