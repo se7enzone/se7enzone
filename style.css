@@ -395,6 +395,9 @@ body {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    /* Tambahan kode pembatas seperlunya: */
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* Harga Coret & Harga Diskon */
@@ -419,5 +422,30 @@ body {
     font-size: 11px;
     font-weight: 650;
     color: #ff3b00;
+}
+
+/* --- Tombol Plus (+) & Tata Letak Bawah --- */
+.product-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
+.cart-btn {
+    background-color: #ff3b00; /* Warna merah cabai SE7ENZONE */
+    border: none;
+    border-radius: 6px;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+}
+
+.cart-btn:active {
+    transform: scale(0.92);
 }
 
