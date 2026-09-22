@@ -343,19 +343,19 @@ body {
 /* GRID 2 KOLOM & CARD PRODUK (RASIO FOTO 16:9)       */
 /* ================================================= */
 
-/* Container utama untuk membungkus grid produk */
+/* Container Grid 2 Kolom */
 .product-grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Membuat 2 kolom sama lebar */
-    gap: 12px;      /* Jarak antar card */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
     padding: 0 16px 20px 16px;
     width: 100%;
 }
 
-/* Desain Card Produk Satuan */
+/* Desain Card Produk */
 .product-card {
-    background-color: #1a1a1a;    /* Warna card sedikit kontras dari background utama */
-    border: 1px solid rgba(255, 255, 255, 0.08); /* Border tipis halus */
+    background-color: #1a1a1a;
+    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     overflow: hidden;
     display: flex;
@@ -364,38 +364,41 @@ body {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Pembungkus Gambar dengan Rasio 16:9 */
+/* Pembungkus Gambar dengan Celah */
 .product-img-wrapper {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 9;     /* Memastikan foto selalu berasio 16:9 */
-    background-color: #222222;
+    aspect-ratio: 16 / 9;
+    background-color: transparent;
     overflow: hidden;
+    padding: 8px 8px 0 8px;
+    box-sizing: border-box;
 }
 
 .product-img-wrapper img {
     width: 100%;
     height: 100%;
-    object-fit: cover;   /* Foto memenuhi area tanpa gepeng */
+    object-fit: cover;
+    border-radius: 10px;
 }
 
-/* Area Konten di Bawah Gambar */
+/* Area Konten Teks */
 .product-info {
-    padding: 10px 12px 12px 12px;
+    padding: 8px 10px 10px 10px;
     display: flex;
     flex-direction: column;
     gap: 4px;
 }
 
-/* Judul Produk */
+/* Judul Produk: Font standar sistem & tidak tebal */
 .product-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 12px;
-    font-weight: 600;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 11.5px;
+    font-weight: 400; 
     color: #ffffff;
     white-space: nowrap;
     overflow: hidden;
-    text-overflow: ellipsis;   /* Memotong teks panjang jadi titik-titik (...) */
+    text-overflow: ellipsis;
 }
 
 /* Harga Coret & Harga Normal */
@@ -403,24 +406,49 @@ body {
     display: flex;
     align-items: center;
     gap: 6px;
-    margin-top: 2px;
 }
 
 .product-price-old {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     font-size: 10px;
     color: #888888;
-    text-decoration: line-through;   /* Harga dicoret */
+    text-decoration: line-through;
 }
 
 .product-price-current {
-    font-size: 13px;
-    font-weight: 700;
-    color: #ff3b00;    /* Warna merah cabai tema kita */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    color: #ff3b00;
 }
 
-/* Informasi Stok */
+/* Baris Bawah: Stok dan Tombol View Detail */
+.product-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+}
+
 .product-stock {
-    font-size: 10px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 9.5px;
     color: #aaaaaa;
-    margin-top: 2px;
+}
+
+/* Tombol View Detail Mungil */
+.product-detail-btn {
+    background-color: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 9px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    padding: 4px 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.product-detail-btn:active {
+    background-color: #ff3b00;
+    border-color: #ff3b00;
 }
