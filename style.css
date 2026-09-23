@@ -456,7 +456,9 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap transparan */
+    background-color: rgba(0, 0, 0, 0.7);  /* Latar belakang gelap transparan */
+    backdrop-filter: blur(4px);            /* <-- Tambahkan baris efek blur ini */
+    -webkit-backdrop-filter: blur(4px);    /* <-- Tambahkan baris dukungan webkit ini */
     display: flex;
     align-items: flex-end; /* Memposisikan panel di bawah */
     justify-content: center;
