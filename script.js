@@ -19,20 +19,28 @@ function switchTab(evt, sectionId) {
     document.getElementById(sectionId).classList.add("active-content");
 }
 
-// --- Logika Interaksi Bottom Sheet SE7ENZONE ---
+// --- Logika Interaksi Bottom Sheet SE7ENZONE (Dengan Kunci Layar & Blur) ---
 const cartBtn = document.querySelector('.cart-btn');
 const bottomSheet = document.getElementById('bottomSheet');
 
-// Ketika tombol plus (+) diklik, tampilkan bottom sheet
 if (cartBtn && bottomSheet) {
+    // Ketika tombol plus (+) diklik, tampilkan bottom sheet & kunci layar belakang
     cartBtn.addEventListener('click', function() {
         bottomSheet.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Mengunci layar agar tidak bisa di-scroll
     });
 
-    // Ketika area gelap di luar panel diklik, tutup bottom sheet kembali
+    // Fungsi untuk menutup bottom sheet & membuka kembali kunci layar
+    function tutupBottomSheet() {
+        bottomSheet.classList.remove('active');
+        document.body.style.overflow = ''; // Mengembalikan fungsi scroll halaman
+    }
+
+    // Ketika area gelap/blur di luar panel diklik, tutup bottom sheet
     bottomSheet.addEventListener('click', function(e) {
         if (e.target === bottomSheet) {
-            bottomSheet.classList.remove('active');
+            tutupBottomSheet();
         }
     });
 }
+
