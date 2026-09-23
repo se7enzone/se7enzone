@@ -400,6 +400,14 @@ body {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.product-support-text {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.5);
+    font-weight: 555;
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+
 /* Harga Coret & Harga Diskon */
 .product-price-wrapper {
     display: flex;
