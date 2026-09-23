@@ -19,3 +19,20 @@ function switchTab(evt, sectionId) {
     document.getElementById(sectionId).classList.add("active-content");
 }
 
+// --- Logika Interaksi Bottom Sheet SE7ENZONE ---
+const cartBtn = document.querySelector('.cart-btn');
+const bottomSheet = document.getElementById('bottomSheet');
+
+// Ketika tombol plus (+) diklik, tampilkan bottom sheet
+if (cartBtn && bottomSheet) {
+    cartBtn.addEventListener('click', function() {
+        bottomSheet.classList.add('active');
+    });
+
+    // Ketika area gelap di luar panel diklik, tutup bottom sheet kembali
+    bottomSheet.addEventListener('click', function(e) {
+        if (e.target === bottomSheet) {
+            bottomSheet.classList.remove('active');
+        }
+    });
+}
