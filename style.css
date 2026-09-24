@@ -346,8 +346,9 @@ body {
 /* Wadah card tunggal di sisi kiri */
 .product-single-container {
     padding: 0;
-    width: 46.5%;
+    width: 47%;
     box-sizing: border-box;
+    transform: scale(0.95);
 }
 
 /* Menggeser khusus card produk kedua ke kiri */
