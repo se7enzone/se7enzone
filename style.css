@@ -354,7 +354,7 @@ body {
 /* Menggeser khusus card produk kedua ke kiri */
 .product-single-container:nth-child(2) {
     position: relative;
-    right: 10px;
+    right: 12px;
 }
 
 #produk-section {
