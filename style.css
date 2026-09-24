@@ -351,6 +351,11 @@ body {
     vertical-align: top;
     box-sizing: border-box;
 }
+#produk-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
 /* Desain Utama Card */
 .product-card {
