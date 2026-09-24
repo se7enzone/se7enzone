@@ -345,12 +345,11 @@ body {
 
 /* Wadah card tunggal di sisi kiri */
 .product-single-container {
-    padding: 0 3px;
+    padding: 0;
     width: 48%;
-    display: inline-block;
-    vertical-align: top;
     box-sizing: border-box;
 }
+
 #produk-section {
     display: flex;
     flex-wrap: wrap;
