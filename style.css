@@ -346,8 +346,9 @@ body {
 /* Wadah card tunggal di sisi kiri */
 .product-single-container {
     padding: 0 3px;
-    width: 100%;
-    max-width: 170px;
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
     box-sizing: border-box;
 }
 
