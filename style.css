@@ -346,8 +346,14 @@ body {
 /* Wadah card tunggal di sisi kiri */
 .product-single-container {
     padding: 0;
-    width: 47%;
+    width: 48%;
     box-sizing: border-box;
+}
+
+/* Menggeser khusus card produk kedua ke kiri */
+.product-single-container:nth-child(2) {
+    position: relative;
+    right: 6px;
 }
 
 #produk-section {
