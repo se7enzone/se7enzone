@@ -19,19 +19,53 @@ function switchTab(evt, sectionId) {
     document.getElementById(sectionId).classList.add("active-content");
 }
 
-// --- LANGKAH 3: Logika Membuka Bottom Sheet ---
+// --- LANGKAH 8: Logika Tombol Cart & Slider Dinamis (2 Slide vs 3 Slide) ---
 const bottomSheet = document.getElementById('productBottomSheet');
 const cartButtons = document.querySelectorAll('.cart-btn');
+const sliderTrack = document.getElementById('sliderTrack');
+const sliderDots = document.getElementById('sliderDots');
 
 // Ambil semua tombol (+) di halaman
-cartButtons.forEach((btn) => {
+cartButtons.forEach((btn, index) => {
     btn.addEventListener('click', function(e) {
         e.stopPropagation();
         
-        // Ketika tombol (+) diklik, aktifkan class 'active' pada bottom sheet
-        if (bottomSheet) {
-            bottomSheet.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Mengunci layar agar tidak bisa scroll di belakangnya
+        const card = btn.closest('.product-card');
+        if (card) {
+            const imgEl = card.querySelector('img');
+            const imgSrc = imgEl ? imgEl.src : '';
+            
+            // Tentukan jumlah slide: Produk 1 (index 0) = 2 slide, Produk 2 (index 1) = 3 slide
+            let totalSlides = (index === 0) ? 2 : 3;
+            
+            // Kosongkan wadah slider & dots sebelumnya
+            if (sliderTrack) sliderTrack.innerHTML = '';
+            if (sliderDots) sliderDots.innerHTML = '';
+            
+            // Buat slide gambar dan titik dots secara otomatis
+            for (let i = 0; i < totalSlides; i++) {
+                // Buat elemen slide
+                const slideDiv = document.createElement('div');
+                slideDiv.className = 'sheet-slide';
+                slideDiv.innerHTML = `<img src="${imgSrc}" alt="Slide ${i + 1}">`;
+                sliderTrack.appendChild(slideDiv);
+                
+                // Buat titik dot indikator
+                const dotSpan = document.createElement('span');
+                dotSpan.className = `dot ${i === 0 ? 'active' : ''}`;
+                sliderDots.appendChild(dotSpan);
+            }
+            
+            // Atur lebar track slider menyesuaikan jumlah slide
+            if (sliderTrack) {
+                sliderTrack.style.width = `${totalSlides * 100}%`;
+            }
+            
+            // Munculkan bottom sheet
+            if (bottomSheet) {
+                bottomSheet.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
     });
 });
