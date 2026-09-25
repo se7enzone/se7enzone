@@ -22,23 +22,100 @@ function switchTab(evt, sectionId) {
 document.addEventListener("DOMContentLoaded", function () {
     const bottomSheet = document.getElementById("productBottomSheet");
     const cartButtons = document.querySelectorAll(".cart-btn");
+    
+    const sliderTrack = document.getElementById("sheetSliderTrack");
+    const sliderDots = document.getElementById("sheetSliderDots");
 
-    // Munculkan bottom sheet saat tombol (+) diklik
-    cartButtons.forEach(btn => {
+    // Data khusus foto produk (Produk 1 = 2 slide, Produk 2 = 3 slide)
+    const productsData = [
+        {
+            images: ["produk_sbg.jpg", "produk_slide2.jpg"]
+        },
+        {
+            images: ["produk_sbg.jpg", "produk_slide2.jpg", "produk_slide3.jpg"]
+        }
+    ];
+
+    let currentSlide = 0;
+
+    cartButtons.forEach((btn, index) => {
         btn.addEventListener("click", function (e) {
             e.stopPropagation();
+            
+            const data = productsData[index] || productsData[0];
+            currentSlide = 0;
+
+            if (sliderTrack) sliderTrack.innerHTML = "";
+            if (sliderDots) sliderDots.innerHTML = "";
+
+            data.images.forEach((imgSrc, i) => {
+                const slideDiv = document.createElement("div");
+                slideDiv.className = "sheet-slide";
+                slideDiv.innerHTML = `<img src="${imgSrc}" alt="Slide ${i + 1}">`;
+                sliderTrack.appendChild(slideDiv);
+
+                const dot = document.createElement("span");
+                dot.className = `dot ${i === 0 ? "active" : ""}`;
+                sliderDots.appendChild(dot);
+            });
+
+            if (sliderTrack) {
+                sliderTrack.style.width = `${data.images.length * 100}%`;
+                sliderTrack.style.transform = `translateX(0px)`;
+            }
+
             if (bottomSheet) {
                 bottomSheet.classList.add("active");
-                document.body.style.overflow = "hidden"; // Kunci scroll layar belakang
+                document.body.style.overflow = "hidden";
             }
         });
     });
 
-    // Tutup bottom sheet jika area gelap di luar diklik
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    if (sliderTrack) {
+        sliderTrack.addEventListener("touchstart", function (e) {
+            startX = e.touches[0].clientX;
+            isDragging = true;
+        });
+
+        sliderTrack.addEventListener("touchmove", function (e) {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+        });
+
+        sliderTrack.addEventListener("touchend", function () {
+            if (!isDragging) return;
+            isDragging = false;
+
+            const diffX = startX - currentX;
+            const slideCount = sliderTrack.children.length;
+
+            if (diffX > 50 && currentSlide < slideCount - 1) {
+                currentSlide++;
+            } else if (diffX < -50 && currentSlide > 0) {
+                currentSlide--;
+            }
+
+            sliderTrack.style.transform = `translateX(-${currentSlide * (100 / slideCount)}%)`;
+            
+            const dots = sliderDots.querySelectorAll(".dot");
+            dots.forEach((dot, idx) => {
+                if (idx === currentSlide) {
+                    dot.classList.add("active");
+                } else {
+                    dot.classList.remove("active");
+                }
+            });
+        });
+    }
+
     window.addEventListener("click", function (e) {
         if (e.target === bottomSheet) {
             bottomSheet.classList.remove("active");
-            document.body.style.overflow = ""; // Kembalikan scroll layar
+            document.body.style.overflow = "";
         }
     });
 });
