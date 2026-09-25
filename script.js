@@ -19,110 +19,122 @@ function switchTab(evt, sectionId) {
     document.getElementById(sectionId).classList.add("active-content");
 }
 
-// --- LANGKAH 8: Logika Tombol Cart & Slider Dinamis (2 Slide vs 3 Slide) ---
-const bottomSheet = document.getElementById('productBottomSheet');
-const cartButtons = document.querySelectorAll('.cart-btn');
-const sliderTrack = document.getElementById('sliderTrack');
-const sliderDots = document.getElementById('sliderDots');
+document.addEventListener("DOMContentLoaded", function () {
+    const bottomSheet = document.getElementById("productBottomSheet");
+    const sliderTrack = document.getElementById("sheetSliderTrack");
+    const sliderDots = document.getElementById("sheetSliderDots");
 
-// Ambil semua tombol (+) di halaman
-cartButtons.forEach((btn, index) => {
-    btn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        
-        const card = btn.closest('.product-card');
-        if (card) {
-            const imgEl = card.querySelector('img');
-            const imgSrc = imgEl ? imgEl.src : '';
-            
-            // Tentukan jumlah slide: Produk 1 (index 0) = 2 slide, Produk 2 (index 1) = 3 slide
-            let totalSlides = (index === 0) ? 2 : 3;
-            
-            // Kosongkan wadah slider & dots sebelumnya
-            if (sliderTrack) sliderTrack.innerHTML = '';
-            if (sliderDots) sliderDots.innerHTML = '';
-            
-            // Buat slide gambar dan titik dots secara otomatis
-            for (let i = 0; i < totalSlides; i++) {
-                // Buat elemen slide
-                const slideDiv = document.createElement('div');
-                slideDiv.className = 'sheet-slide';
+    const sheetTitle = document.getElementById("sheetTitle");
+    const sheetPrice = document.getElementById("sheetPrice");
+    const sheetSold = document.getElementById("sheetSold");
+    const sheetDescription = document.getElementById("sheetDescription");
+    const pesanSekarangBtn = document.getElementById("pesanSekarangBtn");
+
+    // Data spesifik produk
+    const productsData = [
+        {
+            title: "Advance Server Level 3 (Multi-Region)",
+            price: "Rp 2.500",
+            sold: "Terjual 120+",
+            description: "Akun multi-region siap pakai, proses cepat, aman, dan bergaransi resmi dari SE7ENZONE.",
+            images: ["produk_sbg.jpg", "produk_slide2.jpg"],
+            whatsappUrl: "https://wa.me/628xxxxxxxxxx?text=Halo,%20saya%20pesan%20Produk%20Multi-Region"
+        },
+        {
+            title: "Advance Server Level 3 (Indonesia Server)",
+            price: "Rp 7.000",
+            sold: "Terjual 250+",
+            description: "Server khusus Indonesia, ping stabil, level 3 siap pakai untuk kebutuhan gaming maksimal.",
+            images: ["produk_sbg.jpg", "produk_slide2.jpg", "produk_slide3.jpg"],
+            whatsappUrl: "https://wa.me/628xxxxxxxxxx?text=Halo,%20saya%20pesan%20Produk%20Indonesia%20Server"
+        }
+    ];
+
+    const cartButtons = document.querySelectorAll(".cart-btn");
+
+    cartButtons.forEach((btn, index) => {
+        btn.addEventListener("click", function (e) {
+            e.stopPropagation();
+            const data = productsData[index] || productsData[0];
+
+            if (sheetTitle) sheetTitle.textContent = data.title;
+            if (sheetPrice) sheetPrice.textContent = data.price;
+            if (sheetSold) sheetSold.textContent = data.sold;
+            if (sheetDescription) sheetDescription.textContent = data.description;
+            if (pesanSekarangBtn) pesanSekarangBtn.href = data.whatsappUrl;
+
+            if (sliderTrack) sliderTrack.innerHTML = "";
+            if (sliderDots) sliderDots.innerHTML = "";
+
+            data.images.forEach((imgSrc, i) => {
+                const slideDiv = document.createElement("div");
+                slideDiv.className = "sheet-slide";
                 slideDiv.innerHTML = `<img src="${imgSrc}" alt="Slide ${i + 1}">`;
                 sliderTrack.appendChild(slideDiv);
-                
-                // Buat titik dot indikator
-                const dotSpan = document.createElement('span');
-                dotSpan.className = `dot ${i === 0 ? 'active' : ''}`;
-                sliderDots.appendChild(dotSpan);
-            }
-            
-            // Atur lebar track slider menyesuaikan jumlah slide
+
+                const dot = document.createElement("span");
+                dot.className = `dot ${i === 0 ? "active" : ""}`;
+                sliderDots.appendChild(dot);
+            });
+
             if (sliderTrack) {
-                sliderTrack.style.width = `${totalSlides * 100}%`;
+                sliderTrack.style.width = `${data.images.length * 100}%`;
             }
-            
-            // Munculkan bottom sheet
+
             if (bottomSheet) {
-                bottomSheet.classList.add('active');
-                document.body.style.overflow = 'hidden';
+                bottomSheet.classList.add("active");
+                document.body.style.overflow = "hidden";
             }
-        }
+        });
     });
-});
 
-// Tutup bottom sheet jika area gelap di luar panel diklik
-if (bottomSheet) {
-    bottomSheet.addEventListener('click', function(e) {
+    // Tutup jika area luar diklik
+    window.addEventListener("click", function (e) {
         if (e.target === bottomSheet) {
-            bottomSheet.classList.remove('active');
-            document.body.style.overflow = ''; // Mengembalikan fungsi scroll layar
-        }
-    });
-}
-
-// --- LANGKAH 4: Fitur Geser ke Bawah (Swipe Down) untuk Menutup ---
-let startY = 0;
-let currentY = 0;
-let isDragging = false;
-
-const sheetContent = bottomSheet.querySelector('.bottom-sheet-content');
-
-if (sheetContent) {
-    // Saat jari mulai menyentuh area sheet
-    sheetContent.addEventListener('touchstart', function(e) {
-        startY = e.touches[0].clientY;
-        isDragging = true;
-    });
-
-    // Saat jari digeser ke bawah
-    sheetContent.addEventListener('touchmove', function(e) {
-        if (!isDragging) return;
-        currentY = e.touches[0].clientY;
-        let diffY = currentY - startY;
-
-        // Jika digeser ke bawah (nilai positif), ikuti gerakan jari
-        if (diffY > 0) {
-            sheetContent.style.transform = `translateY(${diffY}px)`;
-            sheetContent.style.transition = 'none'; // Matikan transisi agar responsif mengikuti jari
+            bottomSheet.classList.remove("active");
+            document.body.style.overflow = "";
         }
     });
 
-    // Saat jari dilepaskan dari layar
-    sheetContent.addEventListener('touchend', function(e) {
-        if (!isDragging) return;
-        isDragging = false;
-        
-        let diffY = currentY - startY;
-        sheetContent.style.transition = 'transform 0.3s cubic-bezier(0.1, 0.9, 0.1, 1)'; // Nyalakan kembali animasinya
+    // --- FITUR TAMBAHAN: Swipe Down untuk Menutup dari Header ---
+    let startY = 0;
+    let currentY = 0;
+    let isDragging = false;
 
-        // Jika geseran ke bawah lebih dari 100 piksel, tutup bottom sheet
-        if (diffY > 100) {
-            bottomSheet.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-        
-        // Kembalikan posisi sheet ke asal jika tidak jadi ditutup
-        sheetContent.style.transform = 'translateY(0)';
-    });
-}
+    if (bottomSheet) {
+        bottomSheet.addEventListener("touchstart", function (e) {
+            // Hanya aktifkan drag jika menyentuh bagian atas (header/handle)
+            if (e.target.closest('.sheet-handle') || e.target.closest('.sheet-details')) {
+                startY = e.touches[0].clientY;
+                isDragging = true;
+            }
+        });
 
+        bottomSheet.addEventListener("touchmove", function (e) {
+            if (!isDragging) return;
+            currentY = e.touches[0].clientY;
+            let diffY = currentY - startY;
+
+            // Jika ditarik ke bawah (positif)
+            if (diffY > 0) {
+                bottomSheet.style.transition = "none";
+                bottomSheet.style.transform = `translateY(${diffY}px)`;
+            }
+        });
+
+        bottomSheet.addEventListener("touchend", function (e) {
+            if (!isDragging) return;
+            isDragging = false;
+            let diffY = currentY - startY;
+
+            bottomSheet.style.transition = "bottom 0.3s ease-in-out, transform 0.3s ease-in-out";
+            bottomSheet.style.transform = "translateY(0)";
+
+            // Jika ditarik ke bawah lebih dari 100px, tutup sheet
+            if (diffY > 100) {
+                bottomSheet.classList.remove("active");
+                document.body.style.overflow = "";
+            }
+        });
+    }
+});
