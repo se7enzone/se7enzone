@@ -126,36 +126,11 @@
     <p style="color: #aaa; font-size: 12px; padding: 10px 0;">Panduan cara order dan login akun game...</p>
 </div>
              
-                <!-- --- Bottom Sheet (Panel Pilihan Produk & Varian) --- -->
-<div class="bottom-sheet-overlay" id="bottomSheet">
+      <!-- === LANGKAH 1: Kerangka Bottom Sheet === -->
+<div class="bottom-sheet-overlay" id="productBottomSheet">
     <div class="bottom-sheet-content">
-        <!-- Garis kecil indikator tarik di atas modal -->
+        <!-- Garis indikator di tengah atas -->
         <div class="sheet-handle"></div>
-        
-        <!-- Bagian Preview Produk (Gambar & Detail Utama) -->
-        <div class="sheet-product-preview">
-            <div class="sheet-img-box">
-                <img id="sheetProductImg" src="" alt="Produk">
-            </div>
-            <div class="sheet-info-box">
-                <div class="sheet-title" id="sheetProductTitle">Nama Produk</div>
-                <div class="sheet-subtitle" id="sheetProductRegion">Region / Keterangan</div>
-                <div class="sheet-price" id="sheetProductPrice">Rp 0</div>
-            </div>
-        </div>
-        
-        <!-- Area Tombol Pilihan Varian / Jenis -->
-        <div class="variant-section">
-            <span class="variant-label">Pilih Varian:</span>
-            <div class="variant-options" id="sheetVariantContainer">
-                <!-- Tombol varian akan terisi otomatis atau dinamis di sini -->
-                <button class="variant-btn active">Varian 1</button>
-                <button class="variant-btn">Varian 2</button>
-            </div>
-        </div>
-        
-        <!-- Tombol Pesan Sekarang (Menuju Card Form Pembayaran) -->
-        <button class="sheet-order-btn" id="sheetOrderBtn">PESAN SEKARANG</button>
     </div>
 </div>
 
