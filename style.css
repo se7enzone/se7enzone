@@ -573,3 +573,72 @@ body {
     border-radius: 4px;
     background-color: #ff3b30; /* Warna merah SE7ENZONE */
 }
+
+/* Styling Informasi Detail Produk di Bottom Sheet */
+.sheet-details {
+    padding: 15px 0;
+}
+
+.sheet-details h2 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.sheet-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff3b30; /* Warna merah khas SE7ENZONE */
+    margin-bottom: 4px;
+}
+
+.sheet-sold {
+    font-size: 13px;
+    color: #aaaaaa;
+    margin-bottom: 12px;
+}
+
+.sheet-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 15px 0;
+}
+
+.sheet-description-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+#sheetDescription {
+    font-size: 14px;
+    color: #cccccc;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+/* Styling Tombol Pesan Sekarang */
+.sheet-footer {
+    margin-top: 10px;
+}
+
+.btn-pesan-sekarang {
+    display: block;
+    width: 100%;
+    background-color: #ff3b30; /* Warna tombol merah */
+    color: #ffffff;
+    text-align: center;
+    padding: 14px 0;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(255, 59, 48, 0.3);
+    transition: background-color 0.2s;
+}
+
+.btn-pesan-sekarang:active {
+    background-color: #e03229;
+}
