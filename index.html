@@ -126,21 +126,37 @@
     <p style="color: #aaa; font-size: 12px; padding: 10px 0;">Panduan cara order dan login akun game...</p>
 </div>
              
-          <!-- === Wadah Slider Dinamis di dalam Bottom Sheet === -->
-    <div class="bottom-sheet-overlay" id="productBottomSheet">
-        <div class="bottom-sheet-content">
-            <!-- Garis indikator di tengah atas -->
-            <div class="sheet-handle"></div>
+              <!-- BOTTOM SHEET DETAIL PRODUK -->
+    <div id="productBottomSheet" class="bottom-sheet">
+        <div class="sheet-content">
+            <!-- Tombol Tutup -->
+            <button id="closeSheet" class="close-sheet">&times;</button>
             
-            <!-- Wadah Slider Kosong (Isinya akan diisi otomatis oleh JavaScript) -->
+            <!-- Slider Foto Produk -->
             <div class="sheet-slider-container">
-                <div class="sheet-slider-track" id="sliderTrack">
-                    <!-- Slide gambar akan muncul di sini secara otomatis -->
+                <div class="sheet-slider-track" id="sheetSliderTrack">
+                    <!-- Slide foto akan dimasukkan otomatis oleh JavaScript -->
                 </div>
-                <!-- Titik Indikator Dots -->
-                <div class="sheet-slider-dots" id="sliderDots">
-                    <!-- Titik dots akan muncul di sini secara otomatis -->
+                <div class="sheet-slider-dots" id="sheetSliderDots">
+                    <!-- Titik indikator slide otomatis -->
                 </div>
+            </div>
+
+            <!-- Informasi Detail Produk -->
+            <div class="sheet-details">
+                <h2 id="sheetTitle">Judul Produk</h2>
+                <div id="sheetPrice" class="sheet-price">Rp 0</div>
+                <div id="sheetSold" class="sheet-sold">Terjual 100+</div>
+                
+                <hr class="sheet-divider">
+                
+                <div class="sheet-description-title">Detail Produk</div>
+                <p id="sheetDescription">Deskripsi lengkap produk akan muncul di sini.</p>
+            </div>
+
+            <!-- Tombol Aksi Pesan Sekarang -->
+            <div class="sheet-footer">
+                <a href="#" id="pesanSekarangBtn" class="btn-pesan-sekarang" target="_blank">PESAN SEKARANG</a>
             </div>
         </div>
     </div>
