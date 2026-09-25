@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Logika Geser (Touch) yang stabil
     let startX = 0;
     let currentX = 0;
     let isDragging = false;
@@ -79,12 +80,12 @@ document.addEventListener("DOMContentLoaded", function () {
         sliderTrack.addEventListener("touchstart", function (e) {
             startX = e.touches[0].clientX;
             isDragging = true;
-        });
+        }, { passive: true });
 
         sliderTrack.addEventListener("touchmove", function (e) {
             if (!isDragging) return;
             currentX = e.touches[0].clientX;
-        });
+        }, { passive: true });
 
         sliderTrack.addEventListener("touchend", function () {
             if (!isDragging) return;
@@ -101,14 +102,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
             sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
             
-            const dots = sliderDots.querySelectorAll(".dot");
-            dots.forEach((dot, idx) => {
-                if (idx === currentSlide) {
-                    dot.classList.add("active");
-                } else {
-                    dot.classList.remove("active");
-                }
-            });
+            if (sliderDots) {
+                const dots = sliderDots.querySelectorAll(".dot");
+                dots.forEach((dot, idx) => {
+                    if (idx === currentSlide) {
+                        dot.classList.add("active");
+                    } else {
+                        dot.classList.remove("active");
+                    }
+                });
+            }
         });
     }
 
