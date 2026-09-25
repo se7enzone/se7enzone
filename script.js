@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 currentSlide--;
             }
 
-            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
+            sliderTrack.style.transform = `translateX(-${currentSlide * (100 / slideCount)}%)`;
             
             if (sliderDots) {
                 const dots = sliderDots.querySelectorAll(".dot");
