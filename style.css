@@ -471,44 +471,33 @@ body {
 }
 
 /* --- LANGKAH 2: Styling Dasar Bottom Sheet --- */
-.bottom-sheet-overlay {
+.bottom-sheet {
     position: fixed;
-    top: 0;
+    bottom: -100%; /* Kunci utama agar tersembunyi di bawah layar saat dimuat */
     left: 0;
     width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Latar belakang gelap transparan */
-    backdrop-filter: blur(4px);            /* Efek blur di belakang panel */
-    display: flex;
-    align-items: flex-end;                 /* Memposisikan panel di bawah */
-    justify-content: center;
-    z-index: 999;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    height: 85vh;
+    background-color: #1a1a1a; /* Warna card gelap ala SE7ENZONE */
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
+    transition: bottom 0.3s ease-in-out;
+    z-index: 1000;
+    overflow-y: auto;
+    box-sizing: border-box;
 }
 
-/* Kelas aktif untuk memunculkan panel nanti */
-.bottom-sheet-overlay.active {
-    opacity: 1;
-    visibility: visible;
+/* Kelas aktif untuk memunculkan panel dari bawah dengan mulus */
+.bottom-sheet.active {
+    bottom: 0; 
 }
 
 .bottom-sheet-content {
-    background-color: #1a1a1a;             /* Warna card gelap ala SE7ENZONE */
     width: 100%;
-    max-width: 480px;                      /* Batas lebar agar tetap rapi di layar HP */
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    max-width: 480px; /* Batas lebar agar tetap rapi di layar HP */
+    margin: 0 auto;
     padding: 16px 20px 24px 20px;
     box-sizing: border-box;
-    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.5);
-    transform: translateY(100%);           /* Posisi awal tersembunyi di bawah */
-    transition: transform 0.3s cubic-bezier(0.1, 0.9, 0.1, 1);
-}
-
-.bottom-sheet-overlay.active .bottom-sheet-content {
-    transform: translateY(0);              /* Muncul naik dengan mulus */
 }
 
 /* Garis kecil di atas modal */
@@ -523,11 +512,11 @@ body {
 /* --- PERBAIKAN: Wadah Slider Rasio 16:9 yang Presisi --- */
 .sheet-slider-container {
     width: 100%;
-    aspect-ratio: 16 / 9;         /* Mengunci rasio persis 16:9 */
+    aspect-ratio: 16 / 9; /* Mengunci rasio persis 16:9 */
     overflow: hidden;
     position: relative;
     border-radius: 12px;
-    background-color: #000;        /* Latar belakang hitam bersih */
+    background-color: #000; /* Latar belakang hitam bersih */
 }
 
 .sheet-slider-track {
@@ -548,7 +537,7 @@ body {
 .sheet-slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain;           /* Foto tampil utuh tanpa terpotong/zoom */
+    object-fit: contain; /* Foto tampil utuh tanpa terpotong/zoom */
     border-radius: 12px;
 }
 
