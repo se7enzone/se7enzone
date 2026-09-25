@@ -520,44 +520,39 @@ body {
     margin: 0 auto 16px auto;
 }
 
-/* --- WADAH SLIDER FOTO RASIO 16:9 --- */
+/* --- WADAH SLIDER FOTO POTRET --- */
 .sheet-slider-container {
-    width: 100%;
-    aspect-ratio: 16 / 9; /* Mengunci rasio persis 16:9 */
-    overflow: hidden;
     position: relative;
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    aspect-ratio: 9 / 16;
+    background: #000;
     border-radius: 12px;
-    background-color: #000; /* Latar belakang hitam bersih */
-    margin-bottom: 12px;
+    overflow: hidden;
 }
 
 .sheet-slider-track {
     display: flex;
     height: 100%;
+    width: 100%;
     transition: transform 0.3s ease-in-out;
-    cursor: grab; /* Menandakan bisa digeser */
-}
-
-.sheet-slider-track:active {
-    cursor: grabbing;
 }
 
 .sheet-slide {
     min-width: 100%;
+    width: 100%;
     height: 100%;
-    box-sizing: border-box;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     flex-shrink: 0;
 }
 
 .sheet-slide img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Foto tampil utuh tanpa terpotong/zoom */
-    border-radius: 12px;
-    pointer-events: none; /* Mencegah gambar ikut ter-drag secara tidak sengaja */
+    object-fit: contain;
+    background-color: #111;
+    display: block;
+    pointer-events: none;
 }
 
 /* --- TITIK INDIKATOR / DOTS --- */
