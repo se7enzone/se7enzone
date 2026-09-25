@@ -519,3 +519,55 @@ body {
     border-radius: 2px;
     margin: 0 auto 16px auto;
 }
+
+/* --- LANGKAH 7: Styling Slider & Dots di dalam Bottom Sheet --- */
+.sheet-slider-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-radius: 12px;
+    background-color: #111;
+}
+
+.sheet-slider-track {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.sheet-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sheet-slide img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+/* Styling Titik Indikator Dots */
+.sheet-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 12px;
+}
+
+.sheet-slider-dots .dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.sheet-slider-dots .dot.active {
+    width: 18px;
+    border-radius: 4px;
+    background-color: #ff3b30; /* Warna merah SE7ENZONE */
+}
