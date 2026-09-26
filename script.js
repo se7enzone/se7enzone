@@ -14,26 +14,43 @@ function switchTab(evt, sectionId) {
     document.getElementById(sectionId).classList.add("active-content");
 }
 
-// 2. Fungsi Bottom Sheet & Produk
+// Data produk lengkap (Judul, Jumlah Terjual, dan Foto) untuk setiap tombol
+const productsData = [
+    {
+        title: "Advance Server Level 3 (Multi-Region)",
+        sold: "150+",
+        image: "fotoproduk1.jpg"
+    },
+    {
+        title: "Advance Server Level 3 (Indonesia Server)",
+        sold: "320+",
+        image: "fotoproduk2.jpg"
+    }
+];
+
+// 2. Fungsi Bottom Sheet & Dinamis Data Produk
 document.addEventListener("DOMContentLoaded", function () {
     const bottomSheet = document.getElementById("productBottomSheet");
     const cartButtons = document.querySelectorAll(".cart-btn");
+    
+    // Ambil elemen penampil di dalam bottom sheet
     const sheetProductImg = document.getElementById("sheetProductImg");
-
-    // Dibuat ke bawah agar tidak terpotong di layar HP
-    const productImages = [
-        "fotoproduk1.jpg",
-        "fotoproduk2.jpg"
-    ];
+    const sheetProductTitle = document.getElementById("sheetProductTitle");
+    const sheetProductSold = document.getElementById("sheetProductSold");
 
     cartButtons.forEach((btn, index) => {
         btn.addEventListener("click", function (e) {
             e.stopPropagation();
 
-            if (sheetProductImg) {
-                sheetProductImg.src = productImages[index] || "fotoproduk1.jpg";
-            }
+            // Ambil data berdasarkan urutan tombol produk yang diklik
+            const currentData = productsData[index] || productsData[0];
 
+            // Masukkan data secara dinamis ke dalam bottom sheet
+            if (sheetProductImg) sheetProductImg.src = currentData.image;
+            if (sheetProductTitle) sheetProductTitle.textContent = currentData.title;
+            if (sheetProductSold) sheetProductSold.textContent = currentData.sold;
+
+            // Tampilkan bottom sheet
             if (bottomSheet) {
                 bottomSheet.classList.add("active");
                 document.body.style.overflow = "hidden";
@@ -48,4 +65,3 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
