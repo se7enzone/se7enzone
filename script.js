@@ -26,13 +26,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const sliderTrack = document.getElementById("sheetSliderTrack");
     const sliderDots = document.getElementById("sheetSliderDots");
 
-    // Data khusus foto produk (Produk 1 = 2 slide, Produk 2 = 3 slide)
+        // Data khusus foto produk dengan nama file baru yang berasio 16:9
     const productsData = [
         {
-            images: ["produk_sbg.jpg", "produk_slide2.jpg"]
+            images: ["produk1.jpg", "slide2.jpg"]
         },
         {
-            images: ["produk_sbg.jpg", "produk_slide2.jpg", "produk_slide3.jpg"]
+            images: ["produk2.jpg", "slide2.jpg", "slide3.jpg"]
         }
     ];
 
