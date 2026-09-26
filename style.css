@@ -520,11 +520,11 @@ body {
     margin: 0 auto 16px auto;
 }
 
-/* --- WADAH SLIDER GESER MANUAL YANG AMAN --- */
+/* --- SLIDER FLEKSIBEL MENGIKUTI UKURAN FOTO & GESER PER SLIDE --- */
 .sheet-slider-container {
     position: relative;
     width: 100%;
-    background: #1a1a1a;
+    background: #121212;
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 12px;
@@ -532,11 +532,13 @@ body {
 
 .sheet-slider-track {
     display: flex;
+    flex-direction: row;
+    width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
-    scrollbar-width: none; /* Hilangkan garis scrollbar di HP */
+    scrollbar-width: none; /* Hilangkan scrollbar bawaan HP */
 }
 
 .sheet-slider-track::-webkit-scrollbar {
@@ -548,18 +550,18 @@ body {
     width: 100%;
     flex-shrink: 0;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1a1a1a;
+    background-color: #121212;
 }
 
 .sheet-slide img {
     width: 100%;
-    height: auto;
-    aspect-ratio: 16 / 9;
-    object-fit: contain; /* Foto dijamin utuh, tidak akan ke-zoom atau terpotong */
+    height: auto; /* Tinggi otomatis menyesuaikan bentuk asli tiap foto */
     display: block;
+    object-fit: contain;
     pointer-events: none;
 }
 
