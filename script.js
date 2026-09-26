@@ -23,102 +23,25 @@ document.addEventListener("DOMContentLoaded", function () {
     const bottomSheet = document.getElementById("productBottomSheet");
     const cartButtons = document.querySelectorAll(".cart-btn");
     
-    const sliderTrack = document.getElementById("sheetSliderTrack");
-    const sliderDots = document.getElementById("sheetSliderDots");
+        // Ambil elemen wadah gambar tunggal di dalam bottom sheet
+    const sheetProductImg = document.getElementById('sheetProductImg');
 
-        // Data khusus foto produk dengan nama file baru yang berasio 16:9
-    const productsData = [
-        {
-            images: ["produk1.jpg", "slide2.jpg"]
-        },
-        {
-            images: ["produk2.jpg", "slide2.jpg", "slide3.jpg"]
-        }
-    ];
-
-    let currentSlide = 0;
+    // Data nama file foto tunggal untuk masing-masing produk (indeks 0 untuk produk 1, indeks 1 untuk produk 2)
+    const productImages = ["fotoproduk1.jpg", "fotoproduk2.jpg"];
 
     cartButtons.forEach((btn, index) => {
-        btn.addEventListener("click", function (e) {
+        btn.addEventListener('click', function (e) {
             e.stopPropagation();
-            
-            const data = productsData[index] || productsData[0];
-            currentSlide = 0;
 
-            if (sliderTrack) sliderTrack.innerHTML = "";
-            if (sliderDots) sliderDots.innerHTML = "";
-
-            data.images.forEach((imgSrc, i) => {
-                const slideDiv = document.createElement("div");
-                slideDiv.className = "sheet-slide";
-                slideDiv.innerHTML = `<img src="${imgSrc}" alt="Slide ${i + 1}">`;
-                sliderTrack.appendChild(slideDiv);
-
-                const dot = document.createElement("span");
-                dot.className = `dot ${i === 0 ? "active" : ""}`;
-                sliderDots.appendChild(dot);
-            });
-
-            if (sliderTrack) {
-                sliderTrack.style.width = `${data.images.length * 100}%`;
-                sliderTrack.style.transform = `translateX(0px)`;
+            // Masukkan file foto yang sesuai berdasarkan tombol produk yang diklik
+            if (sheetProductImg) {
+                sheetProductImg.src = productImages[index] || "fotoproduk1.jpg";
             }
 
+            // Tampilkan bottom sheet
             if (bottomSheet) {
-                bottomSheet.classList.add("active");
-                document.body.style.overflow = "hidden";
+                bottomSheet.classList.add('active');
+                document.body.style.overflow = 'hidden';
             }
         });
     });
-
-    // Logika Geser (Touch) yang stabil
-    let startX = 0;
-    let currentX = 0;
-    let isDragging = false;
-
-    if (sliderTrack) {
-        sliderTrack.addEventListener("touchstart", function (e) {
-            startX = e.touches[0].clientX;
-            isDragging = true;
-        }, { passive: true });
-
-        sliderTrack.addEventListener("touchmove", function (e) {
-            if (!isDragging) return;
-            currentX = e.touches[0].clientX;
-        }, { passive: true });
-
-        sliderTrack.addEventListener("touchend", function () {
-            if (!isDragging) return;
-            isDragging = false;
-
-            const diffX = startX - currentX;
-            const slideCount = sliderTrack.children.length;
-
-            if (diffX > 50 && currentSlide < slideCount - 1) {
-                currentSlide++;
-            } else if (diffX < -50 && currentSlide > 0) {
-                currentSlide--;
-            }
-
-            sliderTrack.style.transform = `translateX(-${currentSlide * 100}%)`;
-            
-            if (sliderDots) {
-                const dots = sliderDots.querySelectorAll(".dot");
-                dots.forEach((dot, idx) => {
-                    if (idx === currentSlide) {
-                        dot.classList.add("active");
-                    } else {
-                        dot.classList.remove("active");
-                    }
-                });
-            }
-        });
-    }
-
-    window.addEventListener("click", function (e) {
-        if (e.target === bottomSheet) {
-            bottomSheet.classList.remove("active");
-            document.body.style.overflow = "";
-        }
-    });
-});
