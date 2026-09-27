@@ -24,6 +24,7 @@ const productsGalleryData = [
         rating: "4.9",
         reviewCount: "(10K+ Review)",
         images: ["slidev1.jpg", "slide2.jpg"]
+        description: "Akun Mobile Legends Server Indonesia 1 server, siap pakai, aman, dan bergaransi resmi."
     },
     {
         category: "Indonesia Server",
@@ -33,6 +34,7 @@ const productsGalleryData = [
         rating: "4.9",
         reviewCount: "(12K+ Review)",
         images: ["slidev2.jpg", "slide2.jpg", "slide3.jpg"]
+        description: "Akun Mobile Legends lengkap dengan pilihan 5 server aktif, siap pakai, aman, dan bergaransi resmi."
     }
 ];
 
@@ -51,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sheetPriceOld = document.getElementById("sheetPriceOld");
     const sheetRating = document.getElementById("sheetRating");
     const sheetReviewCount = document.getElementById("sheetReviewCount");
+    const sheetDescription = document.getElementById("sheetDescription");
 
     cartButtons.forEach((btn, index) => {
         btn.addEventListener("click", function (e) {
@@ -67,6 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (sheetPriceOld) sheetPriceOld.textContent = productData.priceOld;
             if (sheetRating) sheetRating.textContent = productData.rating;
             if (sheetReviewCount) sheetReviewCount.textContent = productData.reviewCount;
+            if (sheetDescription) sheetDescription.textContent = productData.description;
 
             // Set foto utama ke gambar pertama
             if (sheetMainImg && images.length > 0) {
