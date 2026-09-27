@@ -14,41 +14,66 @@ function switchTab(evt, sectionId) {
     document.getElementById(sectionId).classList.add("active-content");
 }
 
-// Data produk lengkap (Judul, Jumlah Terjual, dan Foto) untuk setiap tombol
-const productsData = [
+// Data galeri foto untuk masing-masing produk
+const productsGalleryData = [
     {
-        title: "Advance Server Level 3 (Multi-Region)",
-        sold: "150+",
-        image: "fotoproduk1.jpg"
+        // Data untuk Produk 1 (2 Foto)
+        images: ["slidev1.jpg", "slide2.jpg"]
     },
     {
-        title: "Advance Server Level 3 (Indonesia Server)",
-        sold: "320+",
-        image: "fotoproduk2.jpg"
+        // Data untuk Produk 2 (3 Foto)
+        images: ["slidev2.jpg", "slide2.jpg", "slide3.jpg"]
     }
 ];
 
-// 2. Fungsi Bottom Sheet & Dinamis Data Produk
+// 2. Fungsi Bottom Sheet & Galeri Foto Dinamis
 document.addEventListener("DOMContentLoaded", function () {
     const bottomSheet = document.getElementById("productBottomSheet");
     const cartButtons = document.querySelectorAll(".cart-btn");
     
-    // Ambil elemen penampil di dalam bottom sheet
-    const sheetProductImg = document.getElementById("sheetProductImg");
-    const sheetProductTitle = document.getElementById("sheetProductTitle");
-    const sheetProductSold = document.getElementById("sheetProductSold");
+    const sheetMainImg = document.getElementById("sheetMainImg");
+    const sheetThumbnailsContainer = document.getElementById("sheetThumbnailsContainer");
 
     cartButtons.forEach((btn, index) => {
         btn.addEventListener("click", function (e) {
             e.stopPropagation();
 
-            // Ambil data berdasarkan urutan tombol produk yang diklik
-            const currentData = productsData[index] || productsData[0];
+            // Ambil data galeri berdasarkan produk yang diklik
+            const productData = productsGalleryData[index] || productsGalleryData[0];
+            const images = productData.images;
 
-            // Masukkan data secara dinamis ke dalam bottom sheet
-            if (sheetProductImg) sheetProductImg.src = currentData.image;
-            if (sheetProductTitle) sheetProductTitle.textContent = currentData.title;
-            if (sheetProductSold) sheetProductSold.textContent = currentData.sold;
+            // Set foto utama ke gambar pertama
+            if (sheetMainImg && images.length > 0) {
+                sheetMainImg.src = images[0];
+            }
+
+            // Bersihkan dan buat thumbnail secara dinamis
+            if (sheetThumbnailsContainer) {
+                sheetThumbnailsContainer.innerHTML = "";
+                
+                images.forEach((imgSrc, imgIndex) => {
+                    const thumb = document.createElement("img");
+                    thumb.src = imgSrc;
+                    thumb.alt = "Thumbnail " + (imgIndex + 1);
+                    thumb.className = "thumb-img";
+                    
+                    if (imgIndex === 0) {
+                        thumb.classList.add("active");
+                    }
+
+                    // Event klik untuk mengganti foto utama dan menandai thumbnail aktif
+                    thumb.addEventListener("click", function () {
+                        if (sheetMainImg) {
+                            sheetMainImg.src = imgSrc;
+                        }
+                        const allThumbs = sheetThumbnailsContainer.querySelectorAll(".thumb-img");
+                        allThumbs.forEach(t => t.classList.remove("active"));
+                        thumb.classList.add("active");
+                    });
+
+                    sheetThumbnailsContainer.appendChild(thumb);
+                });
+            }
 
             // Tampilkan bottom sheet
             if (bottomSheet) {
@@ -58,6 +83,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Tutup bottom sheet saat klik di luar area konten
     window.addEventListener("click", function (e) {
         if (e.target === bottomSheet) {
             bottomSheet.classList.remove("active");
@@ -65,3 +91,4 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
