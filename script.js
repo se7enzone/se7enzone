@@ -16,14 +16,14 @@ function switchTab(evt, sectionId) {
 
 // Data produk lengkap (Galeri Foto, Kategori, Judul, Harga, dan Ulasan)
 const productsGalleryData = [
-    {
+        {
         category: "Indonesia Server",
         title: "Advance Server Level 3",
         priceCurrent: "Rp 2.500",
         priceOld: "Rp 5.000",
         rating: "4.9",
         reviewCount: "(10K+ Review)",
-        images: ["slidev1.jpg", "slide2.jpg"]
+        images: ["slidev1.jpg", "slide2.jpg"], 
         description: "Akun Mobile Legends Server Indonesia 1 server, siap pakai, aman, dan bergaransi resmi."
     },
     {
@@ -33,7 +33,7 @@ const productsGalleryData = [
         priceOld: "Rp 14.000",
         rating: "4.9",
         reviewCount: "(12K+ Review)",
-        images: ["slidev2.jpg", "slide2.jpg", "slide3.jpg"]
+        images: ["slidev2.jpg", "slide2.jpg", "slide3.jpg"], 
         description: "Akun Mobile Legends lengkap dengan pilihan 5 server aktif, siap pakai, aman, dan bergaransi resmi."
     }
 ];
