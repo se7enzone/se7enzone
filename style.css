@@ -577,6 +577,7 @@ body {
 .sheet-category {
     font-size: 12px;
     color: #888888;
+    opacity: 0.4;
     font-weight: 525;
     display: block;
     margin-bottom: 4px;
@@ -612,6 +613,7 @@ body {
 .sheet-price-old {
     font-size: 12px;
     color: #888888;
+    opacity: 0.4;
     text-decoration: line-through;
     font-weight: 600;
 }
@@ -628,7 +630,7 @@ body {
     display: inline-flex;
     align-items: center;
     position: relative; /* KUNCI UTAMA */
-    top: -2px;          /* Menggeser ikon bintang ke atas (bisa dicoba -1px atau -2px) */
+    top: -1.5px;          /* Menggeser ikon bintang ke atas (bisa dicoba -1px atau -2px) */
 }
 
 .sheet-rating {
