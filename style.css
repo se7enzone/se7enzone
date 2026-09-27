@@ -565,7 +565,7 @@ body {
 /* Efek Ketika Thumbnail Dipilih/Aktif */
 .thumb-img.active {
     opacity: 1;
-    border-color: #ffffff;
+    border: 1.5px solid #ff3b00;
 }
 
 /* --- CSS DETAIL PRODUK DI BOTTOM SHEET --- */
