@@ -625,9 +625,10 @@ body {
 .sheet-star {
     color: #ffc107;
     font-size: 14px;
-    line-height: 1;       /* Mencegah bintang memiliki ruang kosong atas-bawah berlebih */
     display: inline-flex;
     align-items: center;
+    position: relative; /* KUNCI UTAMA */
+    top: -2px;          /* Menggeser ikon bintang ke atas (bisa dicoba -1px atau -2px) */
 }
 
 .sheet-rating {
