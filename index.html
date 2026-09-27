@@ -131,17 +131,13 @@
     <div class="bottom-sheet-content">
         <div class="sheet-handle"></div>
         
-       <!-- Wadah Foto Produk Tunggal di dalam Bottom Sheet -->
-            <div class="product-card-square">
-                <img id="sheetProductImg" src="" alt="Foto Produk" class="product-img-square">
+                   <!-- 1. Foto Utama Besar di Atas (Rasio 16:9) -->
+            <div class="product-main-container">
+                <img id="sheetMainImg" src="" alt="Foto Utama" class="product-main-img">
             </div>
-        <!-- Wadah Teks Judul dan Info Terjual -->
-            <div class="sheet-product-info" style="margin-top: 14px;">
-                <h3 id="sheetProductTitle">Nama Produk</h3>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <span>Terjual <strong id="sheetProductSold">0+</strong></span>
-                </div>
-            </div>
+
+            <!-- 2. Wadah Thumbnail Foto Kecil di Bawah -->
+            <div id="sheetThumbnailsContainer" class="product-thumbs-container"></div>
 
     <script src="script.js"></script>
 </body>
