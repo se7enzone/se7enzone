@@ -14,40 +14,66 @@ function switchTab(evt, sectionId) {
     document.getElementById(sectionId).classList.add("active-content");
 }
 
-// Data galeri foto untuk masing-masing produk
+// Data produk lengkap (Galeri Foto, Kategori, Judul, Harga, dan Ulasan)
 const productsGalleryData = [
     {
-        // Data untuk Produk 1 (2 Foto)
+        category: "Indonesia Server",
+        title: "Advance Server Level 3",
+        priceCurrent: "Rp 2.500",
+        priceOld: "Rp 5.000",
+        rating: "4.9",
+        reviewCount: "(10K+ Review)",
         images: ["slidev1.jpg", "slide2.jpg"]
     },
     {
-        // Data untuk Produk 2 (3 Foto)
+        category: "Indonesia Server",
+        title: "Advance Server Level 3",
+        priceCurrent: "Rp 7.000",
+        priceOld: "Rp 14.000",
+        rating: "4.9",
+        reviewCount: "(12K+ Review)",
         images: ["slidev2.jpg", "slide2.jpg", "slide3.jpg"]
     }
 ];
 
-// 2. Fungsi Bottom Sheet & Galeri Foto Dinamis
+// 2. Fungsi Bottom Sheet & Konten Dinamis
 document.addEventListener("DOMContentLoaded", function () {
     const bottomSheet = document.getElementById("productBottomSheet");
     const cartButtons = document.querySelectorAll(".cart-btn");
     
     const sheetMainImg = document.getElementById("sheetMainImg");
     const sheetThumbnailsContainer = document.getElementById("sheetThumbnailsContainer");
+    
+    // Elemen teks detail produk
+    const sheetProductCategory = document.getElementById("sheetProductCategory");
+    const sheetProductTitle = document.getElementById("sheetProductTitle");
+    const sheetPriceCurrent = document.getElementById("sheetPriceCurrent");
+    const sheetPriceOld = document.getElementById("sheetPriceOld");
+    const sheetRating = document.getElementById("sheetRating");
+    const sheetReviewCount = document.getElementById("sheetReviewCount");
 
     cartButtons.forEach((btn, index) => {
         btn.addEventListener("click", function (e) {
             e.stopPropagation();
 
-            // Ambil data galeri berdasarkan produk yang diklik
+            // Ambil data berdasarkan produk yang diklik
             const productData = productsGalleryData[index] || productsGalleryData[0];
             const images = productData.images;
+
+            // Masukkan data teks ke bottom sheet
+            if (sheetProductCategory) sheetProductCategory.textContent = productData.category;
+            if (sheetProductTitle) sheetProductTitle.textContent = productData.title;
+            if (sheetPriceCurrent) sheetPriceCurrent.textContent = productData.priceCurrent;
+            if (sheetPriceOld) sheetPriceOld.textContent = productData.priceOld;
+            if (sheetRating) sheetRating.textContent = productData.rating;
+            if (sheetReviewCount) sheetReviewCount.textContent = productData.reviewCount;
 
             // Set foto utama ke gambar pertama
             if (sheetMainImg && images.length > 0) {
                 sheetMainImg.src = images[0];
             }
 
-            // Bersihkan dan buat thumbnail secara dinamis
+            // Buat thumbnail secara dinamis
             if (sheetThumbnailsContainer) {
                 sheetThumbnailsContainer.innerHTML = "";
                 
@@ -61,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         thumb.classList.add("active");
                     }
 
-                    // Event klik untuk mengganti foto utama dan menandai thumbnail aktif
+                    // Event klik thumbnail
                     thumb.addEventListener("click", function () {
                         if (sheetMainImg) {
                             sheetMainImg.src = imgSrc;
