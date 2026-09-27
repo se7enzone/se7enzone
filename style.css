@@ -577,7 +577,7 @@ body {
 .sheet-category {
     font-size: 12px;
     color: #888888;
-    opacity: 0.4;
+    opacity: 0.5;
     font-weight: 525;
     display: block;
     margin-bottom: 4px;
@@ -613,7 +613,7 @@ body {
 .sheet-price-old {
     font-size: 12px;
     color: #888888;
-    opacity: 0.4;
+    opacity: 0.5;
     text-decoration: line-through;
     font-weight: 600;
 }
