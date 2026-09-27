@@ -131,13 +131,30 @@
     <div class="bottom-sheet-content">
         <div class="sheet-handle"></div>
         
-                   <!-- 1. Foto Utama Besar di Atas (Rasio 16:9) -->
+            <!-- 1. Foto Utama Besar di Atas (Rasio 16:9) -->
             <div class="product-main-container">
                 <img id="sheetMainImg" src="" alt="Foto Utama" class="product-main-img">
             </div>
 
             <!-- 2. Wadah Thumbnail Foto Kecil di Bawah -->
             <div id="sheetThumbnailsContainer" class="product-thumbs-container"></div>
+
+            <!-- 3. Wadah Teks Detail Produk (Judul, Harga, dan Ulasan) -->
+            <div class="sheet-details-container">
+                <span id="sheetProductCategory" class="sheet-category"></span>
+                <h3 id="sheetProductTitle" class="sheet-title"></h3>
+                <div class="sheet-price-review-row">
+                    <div class="sheet-price-wrapper">
+                        <span id="sheetPriceCurrent" class="sheet-price-current"></span>
+                        <span id="sheetPriceOld" class="sheet-price-old"></span>
+                    </div>
+                    <div class="sheet-review-wrapper">
+                        <span class="sheet-star">★</span>
+                        <span id="sheetRating" class="sheet-rating">4.9</span>
+                        <span id="sheetReviewCount" class="sheet-review-count">(10K+ Review)</span>
+                    </div>
+                </div>
+            </div>
 
     <script src="script.js"></script>
 </body>
