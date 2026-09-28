@@ -695,22 +695,14 @@ body {
     background-color: #e03400;
 }
 
-/* Gaya Card Form Pembayaran (Warna Background Disamakan dengan Card Produk) */
+/* Gaya Card Form Pembayaran */
 .payment-card-container {
     width: calc(100% - 32px);
     margin: 16px auto 0 auto;
     padding: 16px;
-    background-color: #1a1a1a; /* Warna background disamakan dengan card produk */
+    background-color: #1a1a1a;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.payment-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: #ffffff;
-    margin-bottom: 12px;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 /* Kotak Kosong Bergaris Putus-putus */
@@ -722,7 +714,7 @@ body {
     text-align: center;
     color: #888888;
     font-size: 13px;
-    background-color: rgba(0, 0, 0, 0.2); /* Sedikit lebih gelap dari background card-nya agar ada efek kedalaman */
+    background-color: rgba(0, 0, 0, 0.2);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
