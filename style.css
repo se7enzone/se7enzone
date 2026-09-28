@@ -697,9 +697,11 @@ body {
 
 /* Gaya Card Form Pembayaran */
 .payment-card-container {
-    width: 100% !important;
+    width: calc(100% + 32px) !important;
     max-width: none !important;
-    margin: 16px 0 0 0 !important;
+    margin-left: -16px !important;
+    margin-right: -16px !important;
+    margin-top: 16px !important;
     padding: 16px !important;
     background-color: #1a1a1a;
     border-radius: 16px;
