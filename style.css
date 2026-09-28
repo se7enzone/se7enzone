@@ -672,3 +672,25 @@ body {
     color: #aaaaaa;
     line-height: 1.5;
 }
+
+/* Gaya untuk Tombol Tambahkan di Bottom Sheet */
+.sheet-add-btn {
+    display: block;
+    width: 100%;
+    margin-top: 16px;
+    padding: 14px 20px;
+    background-color: #ff3b00; /* Warna oranye khas TUMBASAKUN */
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.sheet-add-btn:active {
+    transform: scale(0.98);
+    background-color: #e03400;
+}
