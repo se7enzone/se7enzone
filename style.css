@@ -697,16 +697,13 @@ body {
 
 /* Gaya Card Form Pembayaran */
 .payment-card-container {
-    width: calc(100% + 32px) !important;
-    max-width: none !important;
-    margin-left: -16px !important;
-    margin-right: -16px !important;
-    margin-top: 16px !important;
-    padding: 16px !important;
+    width: 100%;
+    margin: 0;
+    padding: 16px;
     background-color: #1a1a1a;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    box-sizing: border-box !important;
+    box-sizing: border-box;
 }
 
 /* Kotak Kosong Bergaris Putus-putus */
