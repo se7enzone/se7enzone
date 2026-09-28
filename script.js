@@ -24,7 +24,7 @@ const productsGalleryData = [
         rating: "4.9",
         reviewCount: "(10K+ Review)",
         images: ["slidev1.jpg", "slide2.jpg"],
-        description: "Akun khusus Advance Server Mobile Legends yang sudah dilengkapi dengan dukungan akses untuk 1 server aktif di dalamnya. Seluruh spesifikasi seperti tingkat level akun, informasi harga, serta detail tampilannya sudah disesuaikan secara langsung dengan data dan gambar produk ini. Untuk panduan atau cara ganti email akun, silahkan baca pada menu/opsi FAQ atau hubungi Admin."
+        description: "Akun khusus Advance Server Mobile Legends yang sudah dilengkapi dengan dukungan akses untuk 1 server aktif di dalamnya. Seluruh spesifikasi seperti tingkat level akun, informasi harga, serta detail tampilannya sudah disesuaikan secara langsung dengan data dan gambar produk ini."
     },
     {
         category: "Support Android only", // Diubah dari "Indonesia Server"
@@ -34,7 +34,7 @@ const productsGalleryData = [
         rating: "4.9",
         reviewCount: "(12K+ Review)",
         images: ["slidev2.jpg", "slide2.jpg", "slide3.jpg"],
-        description: "Akun khusus Advance Server Mobile Legends yang sudah dilengkapi dengan dukungan akses untuk total 5 server aktif di dalamnya. Seluruh spesifikasi seperti tingkat level akun, informasi harga, serta detail tampilannya sudah disesuaikan secara langsung dengan data dan gambar produk ini. Untuk panduan atau cara ganti email akun, silahkan baca pada menu/opsi FAQ atau hubungi Admin."
+        description: "Akun khusus Advance Server Mobile Legends yang sudah dilengkapi dengan dukungan akses untuk total 5 server aktif di dalamnya. Seluruh spesifikasi seperti tingkat level akun, informasi harga, serta detail tampilannya sudah disesuaikan secara langsung dengan data dan gambar produk ini."
     }
 ];
 
