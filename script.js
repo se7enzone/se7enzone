@@ -13,7 +13,15 @@ function switchTab(evt, sectionId) {
     evt.currentTarget.classList.add("active");
     document.getElementById(sectionId).classList.add("active-content");
 }
-
+    const paymentCard = document.getElementById('paymentCardContainer');
+    if (paymentCard) {
+        if (sectionId === 'produk-section') {
+            paymentCard.style.display = 'block'; // Muncul kalau di tab Pilihan Produk
+        } else {
+            paymentCard.style.display = 'none';  // Sembunyi kalau di tab Cara Order
+        }
+    }
+}
 // Data produk lengkap (Galeri Foto, Kategori, Judul, Harga, dan Ulasan)
 const productsGalleryData = [
     {
