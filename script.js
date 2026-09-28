@@ -16,15 +16,15 @@ function switchTab(evt, sectionId) {
 
 // Data produk lengkap (Galeri Foto, Kategori, Judul, Harga, dan Ulasan)
 const productsGalleryData = [
-        {
+    {
         category: "Indonesia Server",
         title: "Advance Server Level 3",
         priceCurrent: "Rp 2.500",
         priceOld: "Rp 5.000",
         rating: "4.9",
         reviewCount: "(10K+ Review)",
-        images: ["slidev1.jpg", "slide2.jpg"], 
-        description: "Akun Mobile Legends Server Indonesia 1 server, siap pakai, aman, dan bergaransi resmi."
+        images: ["slidev1.jpg", "slide2.jpg"],
+        description: "Akun khusus Advance Server Mobile Legends yang sudah dilengkapi dengan dukungan akses untuk 1 server aktif di dalamnya [<b>Support Android only</b>]. Seluruh spesifikasi seperti tingkat level akun, informasi harga, serta detail tampilannya sudah disesuaikan secara langsung dengan data dan gambar produk ini. Untuk panduan atau cara ganti email akun, silahkan baca pada menu/opsi FAQ atau hubungi Admin."
     },
     {
         category: "Indonesia Server",
@@ -33,8 +33,8 @@ const productsGalleryData = [
         priceOld: "Rp 14.000",
         rating: "4.9",
         reviewCount: "(12K+ Review)",
-        images: ["slidev2.jpg", "slide2.jpg", "slide3.jpg"], 
-        description: "Akun Mobile Legends lengkap dengan pilihan 5 server aktif, siap pakai, aman, dan bergaransi resmi."
+        images: ["slidev2.jpg", "slide2.jpg", "slide3.jpg"],
+        description: "Akun khusus Advance Server Mobile Legends yang sudah dilengkapi dengan dukungan akses untuk total 5 server aktif di dalamnya [<b>Support Android only</b>]. Seluruh spesifikasi seperti tingkat level akun, informasi harga, serta detail tampilannya sudah disesuaikan secara langsung dengan data dan gambar produk ini. Untuk panduan atau cara ganti email akun, silahkan baca pada menu/opsi FAQ atau hubungi Admin."
     }
 ];
 
@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
             if (sheetPriceOld) sheetPriceOld.textContent = productData.priceOld;
             if (sheetRating) sheetRating.textContent = productData.rating;
             if (sheetReviewCount) sheetReviewCount.textContent = productData.reviewCount;
-            if (sheetDescription) sheetDescription.textContent = productData.description;
+            if (sheetDescription) sheetDescription.innerHTML = productData.description;
 
             // Set foto utama ke gambar pertama
             if (sheetMainImg && images.length > 0) {
