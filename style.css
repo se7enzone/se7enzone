@@ -697,12 +697,14 @@ body {
 
 /* Gaya Card Form Pembayaran */
 .payment-card-container {
-    width: calc(100% - 32px);
-    margin: 16px auto 0 auto;
+    width: 100%; /* Ubah dari calc(100% - 32px) jadi 100% penuh */
+    max-width: 100%;
+    margin: 16px 0 0 0; /* Sesuaikan margin kiri-kanan jadi 0 */
     padding: 16px;
     background-color: #1a1a1a;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.08);
+    box-sizing: border-box; /* Biar padding tidak bikin jebol layar */
 }
 
 /* Kotak Kosong Bergaris Putus-putus */
