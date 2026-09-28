@@ -121,14 +121,6 @@
 
 </div>
 
-    <!-- Card Form Pembayaran Kosong (Tanpa Judul) -->
-<div class="payment-card-container">
-    <!-- Area Kotak Kosong Bergaris Putus-putus -->
-    <div id="paymentProductSlot" class="payment-slot-empty">
-        <span>Belum ada item produk yang dipilih.</span>
-    </div>
-</div>
-    
 <div id="order-section" class="tab-content">
     <!-- Masukkan panduan cara order atau FAQ Moonton di sini -->
     <p style="color: #aaa; font-size: 12px; padding: 10px 0;">Panduan cara order dan login akun game...</p>
@@ -175,6 +167,13 @@
             </div>
         </div>
     </div>
+
+    <!-- Card Form Pembayaran (Ditaruh di luar tab, nanti diatur script) -->
+<div id="paymentCardContainer" class="payment-card-container">
+    <div id="paymentProductSlot" class="payment-slot-empty">
+        <span>Belum ada item produk yang dipilih.</span>
+    </div>
+</div>
 
     <script src="script.js"></script>
 </body>
