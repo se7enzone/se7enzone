@@ -694,3 +694,32 @@ body {
     transform: scale(0.98);
     background-color: #e03400;
 }
+
+/* Gaya Card Form Pembayaran */
+.payment-card-container {
+    width: 100%;
+    margin-top: 24px;
+    padding: 20px;
+    background-color: #121212;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.payment-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 14px;
+}
+
+/* Kotak Kosong Bergaris Putus-putus */
+.payment-slot-empty {
+    width: 100%;
+    padding: 30px 16px;
+    border: 2px dashed rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    text-align: center;
+    color: #888888;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.02);
+}
