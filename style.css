@@ -705,12 +705,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-/* TAMBAHKAN INI: Supaya otomatis sembunyi kalau di luar tab produk atau kalau tab order aktif */
-.tab-content:not(#produk-section) .payment-card-container,
-#order-section.active-content ~ .payment-card-container {
-    display: none !important;
-}
-
 /* Kotak Kosong Bergaris Putus-putus */
 .payment-slot-empty {
     width: 100%;
