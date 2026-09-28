@@ -695,10 +695,10 @@ body {
     background-color: #e03400;
 }
 
-/* Gaya Card Form Pembayaran (Font Standar & Lebih Proporsional) */
+/* Gaya Card Form Pembayaran (Lebar Pas & Ada Jarak Samping) */
 .payment-card-container {
-    width: 100%;
-    margin-top: 16px;
+    width: calc(100% - 32px);
+    margin: 16px auto 0 auto;
     padding: 14px;
     background-color: #121212;
     border-radius: 12px;
