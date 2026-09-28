@@ -18,7 +18,7 @@ function switchTab(evt, sectionId) {
 const productsGalleryData = [
     {
         category: "Support Android only", // Diubah dari "Indonesia Server"
-        title: "Advance Server Level 3",
+        title: "Advance Server Level 3 | 1 server",
         priceCurrent: "Rp 2.500",
         priceOld: "Rp 5.000",
         rating: "4.9",
@@ -28,7 +28,7 @@ const productsGalleryData = [
     },
     {
         category: "Support Android only", // Diubah dari "Indonesia Server"
-        title: "Advance Server Level 3",
+        title: "Advance Server Level 3 | 5 server",
         priceCurrent: "Rp 7.000",
         priceOld: "Rp 14.000",
         rating: "4.9",
