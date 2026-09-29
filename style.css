@@ -828,4 +828,10 @@ body {
     white-space: nowrap;
     box-sizing: border-box !important;
 }
+/* Perbaikan akhir agar card pembayaran melebar penuh layar */
+.payment-full-row {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
 
