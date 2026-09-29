@@ -734,9 +734,10 @@ body {
 
 .whatsapp-input-container label {
     display: block;
-    font-size: 10px !important; /* <-- Ukuran diperkecil dari 13px jadi 11px */
+    font-size: 11px !important; /* <-- Ukuran diperkecil dari 13px jadi 11px */
     color: #aaaaaa !important;
     margin-bottom: 6px !important;
+    padding-left: 2px !important;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
     font-style: normal !important;
     font-weight: 525 !important;
