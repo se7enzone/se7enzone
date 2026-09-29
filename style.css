@@ -726,4 +726,26 @@ body {
     background-color: rgba(0, 0, 0, 0.2);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
+/* Gaya untuk Kolom Input WhatsApp */
+.whatsapp-input-container {
+    margin-top: 12px;
+}
+
+.whatsapp-input-container label {
+    display: block;
+    font-size: 13px;
+    color: #aaaaaa;
+    margin-bottom: 6px;
+}
+
+.whatsapp-input-container input {
+    width: 100%;
+    padding: 12px;
+    background-color: #111111;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: #ffffff;
+    font-size: 14px;
+    box-sizing: border-box;
+}
 
