@@ -707,9 +707,11 @@ body {
 }
 /* Override agar card form pembayaran melebar penuh */
 #produk-section > .product-single-container:last-child {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: 92% !important; /* Mengurangi sedikit lebarnya dari 100% */
+    max-width: 92% !important;
     transform: none !important;
+    margin-left: auto !important;
+    margin-right: auto !important; /* Otomatis membuat posisi card-nya berada tepat di tengah-tengah */
     margin-top: 12px !important;
 }
 /* Kotak Kosong Bergaris Putus-putus */
