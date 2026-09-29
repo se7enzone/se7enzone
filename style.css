@@ -761,3 +761,53 @@ body {
     outline: none !important;
     border-color: #ff3b00 !important;
 }
+/* Gaya untuk Kolom Kode Promo & Tombol Verifikasi */
+.promo-input-container {
+    margin-top: 12px;
+}
+
+.promo-input-container label {
+    display: block;
+    font-size: 11px !important;
+    color: #aaaaaa !important;
+    margin-bottom: 6px !important;
+    padding-left: 2px !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-style: normal !important;
+    font-weight: 525 !important;
+}
+
+.promo-flex-wrapper {
+    display: flex;
+    gap: 8px;
+}
+
+.promo-flex-wrapper input {
+    flex: 1;
+    padding: 12px !important;
+    background-color: #111111 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    box-sizing: border-box !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+}
+
+.promo-flex-wrapper input:focus {
+    outline: none !important;
+    border-color: #ff3b00 !important;
+}
+
+.promo-btn {
+    padding: 0 16px;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    cursor: pointer;
+    white-space: nowrap;
+}
